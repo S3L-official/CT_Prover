@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "br_aes_ct64_keysched",
+            "params": {
+                "source": [
+                    0,1
+                ]
+            }
+        }
+    ]
+}

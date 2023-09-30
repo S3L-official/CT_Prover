@@ -1,0 +1,8 @@
+PhASAR v0222
+A LLVM-based static analysis framework
+
+
+----- Finish the Analysis -----
+  %10 = load i8, i8* %9, align 1, !dbg !172, !psr.id !175, !Tainted !176
+all taint position!
+1

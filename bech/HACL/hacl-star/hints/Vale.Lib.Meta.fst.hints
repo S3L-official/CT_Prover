@@ -1,0 +1,31 @@
+[
+  "\b‹u∞ı:WÑ‰|ô≠q=èv",
+  [
+    [
+      "Vale.Lib.Meta.generic_injective_proof",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "primitive_Prims.op_Equality",
+        "primitive_Prims.op_Negation", "projection_inverse_BoxBool_proj_0",
+        "unit_inversion", "unit_typing"
+      ],
+      0,
+      "e65d650e31dd3a42f319c3584b1edaeb"
+    ],
+    [
+      "Vale.Lib.Meta.exists_elim2",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "refinement_interpretation_Tm_refine_12fc703673e1232435ec7d8432df068a",
+        "refinement_interpretation_Tm_refine_44642e3a180510ae019bc79a1726fc14"
+      ],
+      0,
+      "5a25f8634f54040a8a9f195f805ddb54"
+    ]
+  ]
+]

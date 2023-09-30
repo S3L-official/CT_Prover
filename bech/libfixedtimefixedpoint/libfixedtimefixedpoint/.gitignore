@@ -1,0 +1,12 @@
+*.o
+test
+*.pre
+*.pyc
+autogen.c
+lut.h
+base.h
+base.py
+
+*.asm
+*.so
+perf_test

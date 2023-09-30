@@ -1,0 +1,6 @@
+修改cmake文件之后导入cmake的命令（在build目录里执行）
+需要设定编译器
+export CC=/usr/local/llvm-13/bin/clang
+export CXX=/usr/local/llvm-13/bin/clang++
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release  -DBOOST_ROOT=/usr/lib/x86_64-linux-gnu/cmake ..
+ninja phasar-llvm -j 6

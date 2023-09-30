@@ -1,0 +1,351 @@
+[
+  "ACOŸ\t¾k®‚;\u0005I\u0014Áç&",
+  [
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Move",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "2ef0b758cd123bcaa95975fcf0b68cdb"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_LoadImm64",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "174e9210fb545b817a030f9fe867546f"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_lemma_LoadImmShl64",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "734bf0f07138a197f4954c0b396c5ca3"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_wp_LoadImmShl64",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "3d6ab2fa06ada697fc92e23aebcb5010"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_LoadImmShl64",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "02c959f06cd12de00bc582495fb38e67"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddLa",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "b9cdaa7a206ed624eb24b9ba000d45f3"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Add",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "8c86f866d8e6844cc02e869fe9577107"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddWrap",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "91ecdbf569e2c9e4e86f5bf370adaff7"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddImm",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "bcec6f63d7ef7c67c68f192ca409e04c"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddImmWrap",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "17ce53838e490365c90d855b31e6c3be"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddCarry",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "20735daf5292d60bf91d6a0c7472263d"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_wp_AddExtended",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565", "bool_inversion",
+        "bool_typing", "equation_Vale.PPC64LE.Decls.va_if",
+        "fuel_guarded_inversion_Vale.PPC64LE.Machine_s.state",
+        "function_token_typing_Prims.__cache_version_number__",
+        "interpretation_Tm_abs_1f5c4a9f3e1613bd84e54351ac967af0",
+        "interpretation_Tm_abs_41aa176d6219015e863decfa9f4b3a78",
+        "projection_inverse_BoxInt_proj_0",
+        "typing_Vale.PPC64LE.Decls.xer_ca",
+        "typing_Vale.PPC64LE.Machine_s.__proj__Mkstate__item__xer"
+      ],
+      0,
+      "b140d37d74a29a034bf8e742af00eae8"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddExtended",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "860e30f7a1462eb1137542c609cd679f"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_wp_AddExtendedOV",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565", "bool_inversion",
+        "bool_typing", "equation_Vale.PPC64LE.Decls.va_if",
+        "fuel_guarded_inversion_Vale.PPC64LE.Machine_s.state",
+        "function_token_typing_Prims.__cache_version_number__",
+        "interpretation_Tm_abs_5c9f37e9d41277c1ebc6a1055f686745",
+        "interpretation_Tm_abs_728d0cb196e29a0f09c053a70fa833a7",
+        "projection_inverse_BoxInt_proj_0",
+        "typing_Vale.PPC64LE.Decls.xer_ov",
+        "typing_Vale.PPC64LE.Machine_s.__proj__Mkstate__item__xer"
+      ],
+      0,
+      "5973efbfeab5e7601cba5927e05b1b0c"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_AddExtendedOV",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "bf099884fef84433277db74d7f69e464"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Sub",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "b38a818cf90058ce867d23366180501f"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_SubWrap",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "9ffa9c2a54bc8f12e4dbd39d836e273f"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_SubImm",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "ea82f45bfb042a8c8ad146d01399a51a"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_SubImmWrap",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "b393898cd9e9f380794fec83bf8929fc"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_MulLow64",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "7ff2127ca35af38ae81ca304c505cccb"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_MulLow64Wrap",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "2bcbb633b2d348b356fc140555c13874"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_MulHigh64U",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "ed4ec18529bd3470336de3fbbeb3a7f5"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Xor",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "88ec4e05e790c94d4dd81f55e82309c5"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_And",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "d590c1ea16c6a967e33e86bbde7a4619"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Sr64Imm",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "d898b33f52548c693481868378f1ecf6"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Sl64Imm",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "c743d9821f8dfdcba2d1e6fa52ef8603"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Sr64",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "b261bdfc9da773333f46bfb21e238e08"
+    ],
+    [
+      "Vale.PPC64LE.InsBasic.va_quick_Sl64",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "72f070fd232803c4c00e70328af5a7e7"
+    ]
+  ]
+]

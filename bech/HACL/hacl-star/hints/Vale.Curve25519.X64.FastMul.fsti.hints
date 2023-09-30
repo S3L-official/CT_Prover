@@ -1,0 +1,133 @@
+[
+  "»‚+\u000e°ª1)Æß‰ÏNö=ã",
+  [
+    [
+      "Vale.Curve25519.X64.FastMul.va_lemma_Fast_multiply",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "d649bddafa4d54c09fbd5f286b23ace9"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_wp_Fast_multiply",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "565c045eea51aa94fdafc91911ed16c8"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_quick_Fast_multiply",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "d8690b4ebfad1176a064c97c467259f0"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_lemma_Fast_mul_stdcall",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "bool_inversion", "eq2-interp",
+        "equality_tok_Vale.X64.Machine_s.Secret@tok", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.nat64", "equation_Vale.Def.Words_s.natN",
+        "equation_Vale.X64.Decls.va_require_total",
+        "equation_Vale.X64.Decls.validDstAddrs64",
+        "equation_Vale.X64.Decls.validSrcAddrs64",
+        "equation_Vale.X64.Memory.get_vale_heap",
+        "fuel_guarded_inversion_Vale.X64.State.vale_state",
+        "proj_equation_Vale.X64.State.Mkvale_state_vs_memTaint",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_2111fb9198de365561cfa31855f8c970",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "3d0455c14f371469519bcea3e7b3d8d8"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_wp_Fast_mul_stdcall",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.nat64", "equation_Vale.Def.Words_s.natN",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "342f7d4a8e464023ea96776be92d3eec"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_quick_Fast_mul_stdcall",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "d82330eb61162b467e502d93aa29d6d7"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_lemma_Fast_mul2_stdcall",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "bool_inversion", "eq2-interp",
+        "equality_tok_Vale.X64.Machine_s.Secret@tok",
+        "equation_Vale.X64.Decls.va_require_total",
+        "equation_Vale.X64.Decls.validDstAddrs64",
+        "equation_Vale.X64.Decls.validSrcAddrs64",
+        "equation_Vale.X64.Memory.get_vale_heap",
+        "fuel_guarded_inversion_Vale.X64.State.vale_state",
+        "proj_equation_Vale.X64.State.Mkvale_state_vs_memTaint",
+        "refinement_interpretation_Tm_refine_12858e97eec0ea4a967ef81772c81ae1"
+      ],
+      0,
+      "7dc85923918c0ff015ccb29fc08a9ea1"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_wp_Fast_mul2_stdcall",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "9a941445ea2deea074e2d194279b75c8"
+    ],
+    [
+      "Vale.Curve25519.X64.FastMul.va_quick_Fast_mul2_stdcall",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "4929e55f2f921cbde03f97196a013abe"
+    ]
+  ]
+]

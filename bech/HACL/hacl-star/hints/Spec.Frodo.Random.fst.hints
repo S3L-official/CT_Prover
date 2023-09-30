@@ -1,0 +1,21 @@
+[
+  "ÑttJb«‹Üly“\u001b\u0003¬¤/",
+  [
+    [
+      "Spec.Frodo.Random.randombytes_init_",
+      1,
+      2,
+      1,
+      [
+        "@MaxFuel_assumption", "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented",
+        "@fuel_irrelevance_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Prims.nat", "int_typing", "lemma_FStar.UInt.pow2_values",
+        "primitive_Prims.op_Subtraction", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "96741d5ef06a708b1b9d4d5300229556"
+    ]
+  ]
+]

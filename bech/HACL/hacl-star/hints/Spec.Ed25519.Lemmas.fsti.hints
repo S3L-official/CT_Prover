@@ -1,0 +1,20 @@
+[
+  "G½\u0004qAä–ý¹ Wé¼/ý¦",
+  [
+    [
+      "Spec.Ed25519.Lemmas.point_decompress_lemma",
+      1,
+      0,
+      0,
+      [
+        "@MaxFuel_assumption", "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Prims.nat", "int_typing", "lemma_FStar.UInt.pow2_values",
+        "primitive_Prims.op_Subtraction", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "cf384a67f24e480730c52b0ec80d6e7b"
+    ]
+  ]
+]

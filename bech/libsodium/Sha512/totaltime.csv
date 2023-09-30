@@ -1,0 +1,2 @@
+LIB,Filename,Entry-point,1,2,2-s,3,3-s,1+2,1+2_s,1+3,1+3_s,1+2+3,loc,all-sens pos,ct-verify pass?,Taint pass?,taint res,High taint pass?,Is_high_taint_1_2_pass
+libsodium,Sha512,crypto_hash_sha512,14.136882066726685,120.3616852760315,100.30200433731079,238.15910029411316,3720.4593892097473,116.83307123184204,122.95169019699097,140.2061402797699,108.90847373008728,378.5823087692261,28557,2684,Still Have Leak!,Still Have Leak!,22,Still Have Leak!,Still Have Leak!

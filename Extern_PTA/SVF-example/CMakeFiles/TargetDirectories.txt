@@ -1,0 +1,8 @@
+/home/luwei/newifds/SVF-example/CMakeFiles/intrinsics_gen.dir
+/home/luwei/newifds/SVF-example/CMakeFiles/omp_gen.dir
+/home/luwei/newifds/SVF-example/CMakeFiles/acc_gen.dir
+/home/luwei/newifds/SVF-example/CMakeFiles/edit_cache.dir
+/home/luwei/newifds/SVF-example/CMakeFiles/rebuild_cache.dir
+/home/luwei/newifds/SVF-example/src/CMakeFiles/svf-ex.dir
+/home/luwei/newifds/SVF-example/src/CMakeFiles/edit_cache.dir
+/home/luwei/newifds/SVF-example/src/CMakeFiles/rebuild_cache.dir

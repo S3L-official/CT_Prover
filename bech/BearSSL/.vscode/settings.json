@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"ct-verif.h": "c",
+		"set": "cpp",
+		"typeinfo": "c",
+		"inner.h": "c"
+	}
+}

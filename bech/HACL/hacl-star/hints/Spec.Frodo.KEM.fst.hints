@@ -1,0 +1,78 @@
+[
+  ")k‚ÚdÀût'êu\u0007[Îe?",
+  [
+    [
+      "Spec.Frodo.KEM.crypto_kem_keypair",
+      1,
+      0,
+      0,
+      [ "@query" ],
+      0,
+      "ca6a68085e73cc1d364c4240a954ba86"
+    ],
+    [
+      "Spec.Frodo.KEM.crypto_kem_enc",
+      1,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "constructor_distinct_Lib.IntTypes.U32",
+        "constructor_distinct_Lib.IntTypes.U8",
+        "equality_tok_Lib.IntTypes.U1@tok",
+        "equality_tok_Lib.IntTypes.U32@tok",
+        "equality_tok_Lib.IntTypes.U8@tok", "equation_Lib.IntTypes.maxint",
+        "equation_Lib.IntTypes.minint", "equation_Lib.IntTypes.range",
+        "equation_Lib.IntTypes.unsigned", "equation_Spec.AES.gf8",
+        "equation_Spec.AES.irred", "equation_Spec.GaloisField.gf",
+        "proj_equation_Spec.GaloisField.GF_t",
+        "projection_inverse_Spec.GaloisField.GF_t",
+        "refinement_interpretation_Tm_refine_de8080fdc4bd6678af723874a7d70466",
+        "typing_Spec.AES.gf8", "typing_Spec.GaloisField.__proj__GF__item__t"
+      ],
+      0,
+      "0ca344338c57661f13104f9f7bc0b32a"
+    ],
+    [
+      "Spec.Frodo.KEM.crypto_kem_enc",
+      2,
+      0,
+      0,
+      [ "@query" ],
+      0,
+      "5da0f2496fbb8369200c64beb83a16f9"
+    ],
+    [
+      "Spec.Frodo.KEM.crypto_kem_dec",
+      1,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "constructor_distinct_Lib.IntTypes.U32",
+        "constructor_distinct_Lib.IntTypes.U8",
+        "equality_tok_Lib.IntTypes.U1@tok",
+        "equality_tok_Lib.IntTypes.U32@tok",
+        "equality_tok_Lib.IntTypes.U8@tok", "equation_Lib.IntTypes.maxint",
+        "equation_Lib.IntTypes.minint", "equation_Lib.IntTypes.range",
+        "equation_Lib.IntTypes.unsigned", "equation_Spec.AES.gf8",
+        "equation_Spec.AES.irred", "equation_Spec.GaloisField.gf",
+        "proj_equation_Spec.GaloisField.GF_t",
+        "projection_inverse_Spec.GaloisField.GF_t",
+        "refinement_interpretation_Tm_refine_de8080fdc4bd6678af723874a7d70466",
+        "typing_Spec.AES.gf8", "typing_Spec.GaloisField.__proj__GF__item__t"
+      ],
+      0,
+      "352ae797827111b7aa8b871820c597c1"
+    ],
+    [
+      "Spec.Frodo.KEM.crypto_kem_dec",
+      2,
+      0,
+      0,
+      [ "@query" ],
+      0,
+      "38fa23eb053b8054e88e79f6d0dd70b6"
+    ]
+  ]
+]

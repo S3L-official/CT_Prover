@@ -1,0 +1,145 @@
+[
+  "”]d¯çuì˙\u0012˛rÚ\\◊}Ù",
+  [
+    [
+      "Vale.PPC64LE.State.same_heap_types",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "ca5df459aa871b05214501d6d7108a4f"
+    ],
+    [
+      "Vale.PPC64LE.State.coerce",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "refinement_interpretation_Tm_refine_754b00004f4a881ff74d076ab276dfe1"
+      ],
+      0,
+      "81cc2c29db3caf4f224082c394a61f52"
+    ],
+    [
+      "Vale.PPC64LE.State.eval_mem",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "d570bcaea492dd320cd037f86d0e655f"
+    ],
+    [
+      "Vale.PPC64LE.State.eval_cmp_opr",
+      1,
+      1,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "disc_equation_Vale.PPC64LE.Machine_s.CImm",
+        "disc_equation_Vale.PPC64LE.Machine_s.CReg",
+        "fuel_guarded_inversion_Vale.PPC64LE.Machine_s.cmp_opr",
+        "projection_inverse_BoxBool_proj_0"
+      ],
+      0,
+      "66b3b0d5e79581e8196ded7da2910904"
+    ],
+    [
+      "Vale.PPC64LE.State.update_reg",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
+        "equation_Vale.PPC64LE.Machine_s.reg",
+        "function_token_typing_Prims.int",
+        "haseqTm_refine_10933b2b7d83031ac55f8752406bdc16",
+        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
+      ],
+      0,
+      "b78229d2a4d6a42f363845520668ccc6"
+    ],
+    [
+      "Vale.PPC64LE.State.update_vec",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.eqtype",
+        "equation_Vale.PPC64LE.Machine_s.vec",
+        "function_token_typing_Prims.int",
+        "haseqTm_refine_10933b2b7d83031ac55f8752406bdc16",
+        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
+      ],
+      0,
+      "787935972db37ba944e8dbcfdffbec65"
+    ],
+    [
+      "Vale.PPC64LE.State.valid_maddr",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "823819f9808fc032f12c8bcdd147b39d"
+    ],
+    [
+      "Vale.PPC64LE.State.valid_mem128",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "3e56a73102da97c45f58c72301e45e4c"
+    ],
+    [
+      "Vale.PPC64LE.State.state_eta",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "9ede85bccd4d56110c331300cc3cd6f2"
+    ],
+    [
+      "Vale.PPC64LE.State.state_eq",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Arch.Heap.heap_impl" ],
+      0,
+      "a9042556296ba6e6977943da7a07c31b"
+    ],
+    [
+      "Vale.PPC64LE.State.use_machine_state_equal",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "equation_Vale.PPC64LE.Machine_s.regs_t",
+        "equation_Vale.PPC64LE.Regs.t",
+        "equation_Vale.PPC64LE.State.machine_state_eq",
+        "equation_Vale.PPC64LE.State.machine_state_equal",
+        "equation_Vale.PPC64LE.Vecs.t",
+        "fuel_guarded_inversion_Vale.PPC64LE.Machine_s.state",
+        "lemma_Vale.PPC64LE.Regs.lemma_equal_elim",
+        "lemma_Vale.PPC64LE.Vecs.lemma_equal_elim",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_cr0",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_ms_heap",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_ms_stack",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_ms_stackTaint",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_ok",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_regs",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_vecs",
+        "proj_equation_Vale.PPC64LE.Machine_s.Mkstate_xer",
+        "typing_Vale.PPC64LE.Machine_s.__proj__Mkstate__item__regs",
+        "typing_Vale.PPC64LE.Machine_s.__proj__Mkstate__item__vecs"
+      ],
+      0,
+      "49c42fdefd558d384a1112c0b60d0374"
+    ]
+  ]
+]

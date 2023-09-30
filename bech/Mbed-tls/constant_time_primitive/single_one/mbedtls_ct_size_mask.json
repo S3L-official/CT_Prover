@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "mbedtls_ct_size_mask",
+            "params": {
+                "source": [
+                    0
+                ]
+            }
+        }
+    ]
+}

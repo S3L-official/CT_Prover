@@ -1,0 +1,4 @@
+all sensitive: 
+9
+left sensitive: 
+5

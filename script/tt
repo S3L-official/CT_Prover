@@ -1,0 +1,37 @@
+#!/bin/bash
+# if [ "$1" ]; then
+#     echo "yes"
+# else
+#     echo "no"
+# fi
+
+# str=/home/luna/Desktop/Software/softHLA/HLAreporter.v103/HLAreporter.sh
+# path=$(dirname $str)
+# echo $path
+
+# usage() { echo "Usage: $0 [-s <45|90>] [-p <string>]" 1>&2; exit 1; }
+
+# clang_opt=""
+# file=""
+# while getopts ":c:" o; do
+#     case "${o}" in
+#         c)
+# 			clang_opt="$clang_opt ${OPTARG}"
+#             ;;
+#         *)
+#            file=${file}+${OPTARG}
+#             ;;
+#     esac
+# done
+# shift $((OPTIND-1))
+
+# # if [ -z "${s}" ] || [ -z "${p}" ]; then
+# #     usage
+# # fi
+
+# echo "clanopt =${clang_opt}"
+# file=$1_t
+# echo $file
+
+# echo ${@:3}
+pwd

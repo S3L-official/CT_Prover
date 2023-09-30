@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "constant_time_lookup",
+            "params": {
+                "source": [
+                    4
+                ]
+            }
+        }
+    ]
+}

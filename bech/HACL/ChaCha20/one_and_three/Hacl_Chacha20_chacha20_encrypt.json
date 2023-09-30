@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "Hacl_Chacha20_chacha20_encrypt",
+            "params": {
+                "source": [
+                    2,3,4
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[
+  "ˆô3nI\u001dÙ\u0011Q6ñÁLÓêπ",
+  [
+    [
+      "Hacl.Hash.MD5.legacy_hash",
+      1,
+      2,
+      1,
+      [
+        "@query", "constructor_distinct_Spec.Hash.Definitions.MD5",
+        "equality_tok_Spec.Hash.Definitions.MD5@tok",
+        "equation_Spec.Hash.Definitions.is_shake",
+        "projection_inverse_BoxBool_proj_0"
+      ],
+      0,
+      "46b0bb1aa0e78662a4c91e93df3f5745"
+    ]
+  ]
+]

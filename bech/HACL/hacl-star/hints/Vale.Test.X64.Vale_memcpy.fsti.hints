@@ -1,0 +1,17 @@
+[
+  ".≈hê–„ô»≤\u0010\"ª\u0000eS:",
+  [
+    [
+      "Vale.Test.X64.Vale_memcpy.va_quick_Memcpy",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_FStar.Pervasives.Native.tuple3"
+      ],
+      0,
+      "9d3190b1b05e9c00a8792864ba0a6dd1"
+    ]
+  ]
+]

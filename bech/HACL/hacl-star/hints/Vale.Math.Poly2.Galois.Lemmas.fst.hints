@@ -1,0 +1,114 @@
+[
+  "Î\u000f\u001eËç\u0014Ä\u00061U\u001dšêð.ö",
+  [
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_eq_to_poly",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "2c94e38f2ef25bfa75409adeef321fec"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_zero",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_Spec.GaloisField.field",
+        "function_token_typing_Vale.Math.Poly2.Lemmas.lemma_zero_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_irred_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_mul",
+        "lemma_Vale.Math.Poly2.Galois.lemma_to_poly_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_zero",
+        "lemma_Vale.Math.Poly2.lemma_degree_at_least",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_6c3579831eb81025494abc2bedea1303",
+        "typing_Spec.GaloisField.zero",
+        "typing_Vale.Math.Poly2.Galois.to_poly"
+      ],
+      0,
+      "aa8dcabf95c57af9fc082d5064df4884"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_one",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_Spec.GaloisField.field",
+        "lemma_Vale.Math.Poly2.Galois.lemma_irred_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_mul",
+        "lemma_Vale.Math.Poly2.Galois.lemma_one",
+        "lemma_Vale.Math.Poly2.Galois.lemma_to_poly_degree",
+        "lemma_Vale.Math.Poly2.lemma_degree_at_least",
+        "typing_Spec.GaloisField.one",
+        "typing_Vale.Math.Poly2.Galois.to_poly"
+      ],
+      0,
+      "b57b4eadf7c68c027431e32b77f11d60"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_commute",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_Spec.GaloisField.field",
+        "lemma_Vale.Math.Poly2.Galois.lemma_mul"
+      ],
+      0,
+      "345f21a8077a6a1ab7a317d7328546cd"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_associate",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_Spec.GaloisField.field",
+        "lemma_Vale.Math.Poly2.Galois.lemma_irred_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_mul",
+        "lemma_Vale.Math.Poly2.Galois.lemma_to_poly_degree",
+        "lemma_Vale.Math.Poly2.lemma_degree_at_least",
+        "typing_Spec.GaloisField.fmul",
+        "typing_Vale.Math.Poly2.Galois.to_poly"
+      ],
+      0,
+      "9154129f7f269b8e7759e625fde10e04"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_distribute_left",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "fuel_guarded_inversion_Spec.GaloisField.field",
+        "lemma_Vale.Math.Poly2.Galois.lemma_add",
+        "lemma_Vale.Math.Poly2.Galois.lemma_irred_degree",
+        "lemma_Vale.Math.Poly2.Galois.lemma_mul",
+        "lemma_Vale.Math.Poly2.Galois.lemma_to_poly_degree",
+        "lemma_Vale.Math.Poly2.lemma_degree_at_least",
+        "typing_Spec.GaloisField.fadd", "typing_Spec.GaloisField.fmul",
+        "typing_Vale.Math.Poly2.Galois.to_poly"
+      ],
+      0,
+      "09185a5bf53335d82e81eb0814f93f5e"
+    ],
+    [
+      "Vale.Math.Poly2.Galois.Lemmas.lemma_mul_distribute_right",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "1cd920144e42f23f55e3a2de14f29673"
+    ]
+  ]
+]

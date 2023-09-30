@@ -1,0 +1,51 @@
+#!/bin/bash
+#专门用于生成wrapper并且链接lib.bc的脚本
+#可以指定wrapper所需要的头文件
+#在生成之后调用deldeadfunc 去删除不需要的函数 entry point 为参数三
+wrapper=$1
+lib=$2
+entry=$3
+wrapperbc=${wrapper/.c/.bc}
+wrapperll=${wrapper/.c/.ll}
+
+echo "clang-12 -c -emit-llvm -O0 -g -gcolumn-info -Xclang -disable-O0-optnone -DMEMORY_MODULE_NO_REUSE_IMPLS -fcolor-diagnostics -I/home/luwei/smack/share/smack/include ${@:4}  $wrapper -o $wrapperbc"
+
+clang-12 -c -emit-llvm -O0 -g -gcolumn-info -Xclang -disable-O0-optnone -DMEMORY_MODULE_NO_REUSE_IMPLS -fcolor-diagnostics -I/home/luwei/smack/share/smack/include ${@:4}  $wrapper -o $wrapperbc
+
+llvm-link-12 $wrapperbc $lib -o $wrapperbc
+
+# opt-12 --globaldce $wrapperbc -o tmp.bc
+
+# opt-12 -enable-new-pm=0 -load /home/luwei/script/tool/removeDeadDef/luweiDelDeadDef.so -S --luweiDelDeadDef tmp.bc --entry-point $entry --entry-point ${entry}_t > tmp.ll
+
+# opt-12 --globaldce tmp.ll -o tmp.bc
+
+
+
+
+
+
+# echo "+++++++++++++++++++++++++++++++"
+
+# opt-12 -enable-new-pm=0 -load /home/luwei/script/tool/removeDeadDef/luweiDelDeadDef.so -S --luweiDelDeadDef tmp.bc --entry-point $entry --entry-point ${entry}_t > tmp.ll
+
+# opt-12 --globaldce tmp.ll -o tmp.bc
+
+
+
+
+
+
+
+
+
+
+
+
+# echo "+++++++++++++++++++++++++++++++"
+opt-12 -enable-new-pm=0 -load /home/luwei/script/tool/removeDeadDef/luweiDelDeadDef.so -S --luweiDelDeadDef $wrapperbc --entry-point $entry --entry-point ${entry}_t > $wrapperll
+# echo $filehead
+
+
+
+# opt-12 -enable-new-pm=0 -load /home/luwei/script/tool/removeDeadDef/luweiDelDeadDef.so -S --luweiDelDeadDef 1-1.ll --entry-point encrypt_wrapper --entry-point encrypt_wrapper_t > res2.ll

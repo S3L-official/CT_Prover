@@ -1,0 +1,476 @@
+[
+  "‹ö*\u000e¡ý.¥A\u000fõ†iHå¶",
+  [
+    [
+      "Vale.Bignum.Defs.lemma_mul_nat_bound",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "08c535b0edb37ff9dfdeb11b45861a22"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_n_bound",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "1b93aa515b1a549a54947fb1918deff0"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_div_n_lt",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "a4d0700319f0b125287d16982b2b42db"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_div_n_lt",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "int_inversion",
+        "primitive_Prims.op_GreaterThan",
+        "primitive_Prims.op_LessThanOrEqual",
+        "projection_inverse_BoxBool_proj_0",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "f546aba2956c668d140c32b11268b3ec"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_div_n",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "f1fc3cf9a6ef31073fc9074acc5af0c7"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_div_n",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "48697e0f2a682d457d6f77e67b00abcc"
+    ],
+    [
+      "Vale.Bignum.Defs.lemma_mul_div_n",
+      3,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "a57e630935a9d497942229808ad15a46"
+    ],
+    [
+      "Vale.Bignum.Defs.add_lo_def",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.nat1", "equation_Vale.Def.Words_s.natN",
+        "int_inversion", "primitive_Prims.op_LessThan",
+        "projection_inverse_BoxBool_proj_0",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "e42823a8f6a197626374ad2750a9748b"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_add_lo",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.add_lo" ],
+      0,
+      "bdbabdf06bd9afeb4c079cb95dec6a11"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_add_lo_all",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.add_lo" ],
+      0,
+      "cabb82a369667c6fad81a6c27c65a095"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_add_hi",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.add_hi" ],
+      0,
+      "f861ab3494f4608aaadb4bb194e8b3db"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_add_hi_all",
+      1,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.add_hi" ],
+      0,
+      "19ddf447077f3d2642d1a705fb58785f"
+    ],
+    [
+      "Vale.Bignum.Defs.add_lo_hi",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "d8c034b8afc71c6ce353a9e0192183aa"
+    ],
+    [
+      "Vale.Bignum.Defs.add_lo_hi",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "7344d6aed762256be3fdd11989bc228c"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_lo_def",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "c702bc2d02d24f21176f9b2be853253a"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_lo_def",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "85a7a0f06cabb1e6b8f3dc4d528564c8"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_lo",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "271d5078808e3392c348447df672e9dd"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_lo",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "4c92d6b405d11d06e9d55e566dcf7b0c"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_lo",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "0d5b33a45b6ac6b64670465fd1dd56f0"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_lo",
+      2,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.mul_lo" ],
+      0,
+      "95f5d6cac1000f67133a4cd43d94ca34"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_lo_all",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "c43a5d58aa8195c407c7331b27ad9bb1"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_lo_all",
+      2,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.mul_lo" ],
+      0,
+      "1bc97474df993daa26b3f3cdc1adc0e0"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_hi_def",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "ebd9bebc3690c943c00054d57012e8ea"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_hi_def",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "27040e1bfa3d50a783b3fcba6b3b35de"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_hi",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "c73211c7d9dd10d18c6aa3de79c2b47c"
+    ],
+    [
+      "Vale.Bignum.Defs.mul_hi",
+      2,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "a5ee9239060463732a48be987b984946"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_hi",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "2b5fa411b940cca7b5c575d3dbdd3588"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_hi",
+      2,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.mul_hi" ],
+      0,
+      "0aa20f5c808ec32563e1afdac7726ef8"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_hi_all",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.natN", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "be9d518948641e716e2d3ec5373152f8"
+    ],
+    [
+      "Vale.Bignum.Defs.reveal_mul_hi_all",
+      2,
+      1,
+      0,
+      [ "@query", "equation_Vale.Bignum.Defs.mul_hi" ],
+      0,
+      "b4a4f3b3846de4e8d9307b43435c5b49"
+    ],
+    [
+      "Vale.Bignum.Defs.sum_seq_left",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "binder_x_bb4e1c9af0265270f8e7a5f250f730e2_1",
+        "binder_x_bb4e1c9af0265270f8e7a5f250f730e2_2",
+        "equality_tok_Prims.LexTop@tok", "equation_Prims.eqtype",
+        "equation_Prims.nat", "function_token_typing_Prims.int",
+        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2", "int_inversion",
+        "int_typing", "primitive_Prims.op_Equality",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "well-founded-ordering-on-nat"
+      ],
+      0,
+      "28f0116fad97bc5e2c298c687563b195"
+    ],
+    [
+      "Vale.Bignum.Defs.sum_seq_right",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565",
+        "binder_x_bb4e1c9af0265270f8e7a5f250f730e2_1",
+        "binder_x_bb4e1c9af0265270f8e7a5f250f730e2_2",
+        "equality_tok_Prims.LexTop@tok", "equation_Prims.eqtype",
+        "equation_Prims.nat",
+        "function_token_typing_Prims.__cache_version_number__",
+        "function_token_typing_Prims.int",
+        "haseqTm_refine_542f9d4f129664613f2483a6c88bc7c2", "int_inversion",
+        "int_typing", "primitive_Prims.op_Equality",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "well-founded-ordering-on-nat"
+      ],
+      0,
+      "6b5335405674bc2546ef0b485d96db41"
+    ],
+    [
+      "Vale.Bignum.Defs.pow_int",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565",
+        "binder_x_ae567c2fb75be05905677af440075565_0",
+        "binder_x_bb4e1c9af0265270f8e7a5f250f730e2_1", "equation_Prims.nat",
+        "equation_Prims.op_Equals_Equals_Equals",
+        "function_token_typing_Prims.__cache_version_number__",
+        "int_inversion", "int_typing", "primitive_Prims.op_Equality",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "well-founded-ordering-on-nat"
+      ],
+      0,
+      "f91bada5359430189eb9bcf8296689f6"
+    ],
+    [
+      "Vale.Bignum.Defs.sum_pow_seq_left",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "FStar.Seq.Base_interpretation_Tm_arrow_44bb45ed5c2534b346e0f58ea5033251",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565",
+        "Vale.Bignum.Defs_interpretation_Tm_arrow_d5d333817377aec8da767181fea515e3",
+        "equation_Prims.eqtype", "equation_Prims.nat",
+        "equation_Vale.Bignum.Defs.pow_seq",
+        "equation_Vale.Def.Words_s.natN",
+        "function_token_typing_Prims.__cache_version_number__",
+        "function_token_typing_Prims.int", "int_inversion", "int_typing",
+        "interpretation_Tm_abs_357cc5a6953c6fe391abcadab71ffd9b",
+        "lemma_FStar.Seq.Base.lemma_init_len",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_bb4a9973c8f99b57985a81227273102e",
+        "typing_FStar.Seq.Base.length",
+        "typing_Tm_abs_357cc5a6953c6fe391abcadab71ffd9b",
+        "typing_Vale.Def.Words_s.natN"
+      ],
+      0,
+      "77a1c54b7bcf29504eee41456fe2ac10"
+    ],
+    [
+      "Vale.Bignum.Defs.sum_pow_seq",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "f2a4018e9228fa33bbd468f427320ffb"
+    ]
+  ]
+]

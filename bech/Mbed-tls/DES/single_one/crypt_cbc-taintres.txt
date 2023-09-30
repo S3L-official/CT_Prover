@@ -1,0 +1,23 @@
+PhASAR v0222
+A LLVM-based static analysis framework
+
+
+----- Finish the Analysis -----
+  %104 = load i32, i32* %103, align 4, !dbg !227, !psr.id !286, !Tainted !287
+  %58 = load i32, i32* %57, align 4, !dbg !227, !psr.id !237, !Tainted !238
+  %63 = load i32, i32* %62, align 4, !dbg !227, !psr.id !243, !Tainted !238
+  %69 = load i32, i32* %68, align 4, !dbg !227, !psr.id !249, !Tainted !238
+  %75 = load i32, i32* %74, align 4, !dbg !227, !psr.id !255, !Tainted !238
+  %87 = load i32, i32* %86, align 4, !dbg !227, !psr.id !270, !Tainted !238
+  %92 = load i32, i32* %91, align 4, !dbg !227, !psr.id !275, !Tainted !238
+  %98 = load i32, i32* %97, align 4, !dbg !227, !psr.id !281, !Tainted !238
+  %161 = load i32, i32* %160, align 4, !dbg !294, !psr.id !353, !Tainted !238
+  %115 = load i32, i32* %114, align 4, !dbg !294, !psr.id !304, !Tainted !238
+  %120 = load i32, i32* %119, align 4, !dbg !294, !psr.id !309, !Tainted !238
+  %126 = load i32, i32* %125, align 4, !dbg !294, !psr.id !315, !Tainted !238
+  %132 = load i32, i32* %131, align 4, !dbg !294, !psr.id !321, !Tainted !238
+  %144 = load i32, i32* %143, align 4, !dbg !294, !psr.id !336, !Tainted !238
+  %149 = load i32, i32* %148, align 4, !dbg !294, !psr.id !341, !Tainted !238
+  %155 = load i32, i32* %154, align 4, !dbg !294, !psr.id !347, !Tainted !238
+all taint position!
+16

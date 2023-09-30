@@ -1,0 +1,13 @@
+PhASAR v0222
+A LLVM-based static analysis framework
+
+
+----- Finish the Analysis -----
+  br i1 %43, label %44, label %52, !dbg !241, !psr.id !242, !Tainted !243
+  br i1 %78, label %79, label %142, !dbg !345, !psr.id !346, !Tainted !243
+  br i1 %81, label %82, label %87, !dbg !358, !psr.id !359, !Tainted !243
+  %85 = load i8, i8* %84, align 1, !dbg !360, !psr.id !363, !Tainted !243
+  br i1 %94, label %95, label %111, !dbg !384, !psr.id !385, !Tainted !243
+  br i1 %129, label %130, label %139, !dbg !473, !psr.id !474, !Tainted !243
+all taint position!
+6

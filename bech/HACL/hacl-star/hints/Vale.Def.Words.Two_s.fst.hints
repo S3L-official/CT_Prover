@@ -1,0 +1,144 @@
+[
+  "šyA‚‘È\u0001\u000fªS9}|u‘\u0014",
+  [
+    [
+      "Vale.Def.Words.Two_s.nat_to_two_unfold",
+      1,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "int_inversion", "primitive_Prims.op_Multiply",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "180b9cd776535350b1e72dc92bfdd735"
+    ],
+    [
+      "Vale.Def.Words.Two_s.nat_to_two_unfold",
+      2,
+      1,
+      0,
+      [
+        "@MaxFuel_assumption", "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented",
+        "@fuel_irrelevance_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Prims.nat", "equation_Prims.pos",
+        "equation_with_fuel_Prims.pow2.fuel_instrumented", "int_inversion",
+        "primitive_Prims.op_Multiply", "primitive_Prims.op_Subtraction",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5",
+        "typing_Prims.pow2"
+      ],
+      0,
+      "0cb45b346fcf4904e1e1d85d9709036e"
+    ],
+    [
+      "Vale.Def.Words.Two_s.nat_to_two",
+      1,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "int_inversion", "primitive_Prims.op_Multiply",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "e42ebc22554b21b965c286d70a4e60a6"
+    ],
+    [
+      "Vale.Def.Words.Two_s.nat_to_two",
+      2,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "f8ccb91d30de31a7852fddf31823e7fe"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_to_nat_unfold",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "fc0807019a8ed07c998c0a412d5c9f0f"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_to_nat_unfold",
+      2,
+      1,
+      0,
+      [
+        "@MaxFuel_assumption", "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented",
+        "@fuel_irrelevance_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Prims.nat", "equation_Prims.pos",
+        "equation_with_fuel_Prims.pow2.fuel_instrumented",
+        "primitive_Prims.op_Multiply", "primitive_Prims.op_Subtraction",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5",
+        "typing_Prims.pow2"
+      ],
+      0,
+      "365bf4050d92969a371c835ecccc03ae"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_to_nat",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "f99926eaab46aa078f8a41df74fc880b"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_to_nat",
+      2,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "int_inversion", "primitive_Prims.op_Multiply",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2"
+      ],
+      0,
+      "5ac0a39b1f3072246157a004c0587c18"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_select",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.nat1", "equation_Vale.Def.Words_s.natN",
+        "int_inversion", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "97601aba305482fc12bc4de101502722"
+    ],
+    [
+      "Vale.Def.Words.Two_s.two_insert",
+      1,
+      1,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.nat",
+        "equation_Vale.Def.Words_s.nat1", "equation_Vale.Def.Words_s.natN",
+        "int_inversion", "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_c1424615841f28cac7fc34e92b7ff33c"
+      ],
+      0,
+      "e982634cc3401ef02302f1c6335558f3"
+    ]
+  ]
+]

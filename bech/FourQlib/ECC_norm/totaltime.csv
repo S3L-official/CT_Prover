@@ -1,0 +1,2 @@
+LIB,Filename,Entry-point,1,2,2-s,3,3-s,1+2,1+2_s,1+3,1+3_s,1+2+3,loc,all-sens pos,ct-verify pass?,Taint pass?,taint res,High taint pass?,Is_high_taint_1_2_pass
+FourQlib,ECC_norm,eccnorm,0.4171273708343506,23.01931142807007,28.052900791168213,37.73459267616272,61.91154599189758,0.393543004989624,0.4115293025970459,0.4175865650177002,0.4209465980529785,0.41862034797668457,2390,79,Verified!,Verified!,0,Verified!,Verified!

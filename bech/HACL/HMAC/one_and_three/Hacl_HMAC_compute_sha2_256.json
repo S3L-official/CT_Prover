@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "Hacl_HMAC_compute_sha2_256",
+            "params": {
+                "source": [
+                    1,3
+                ]
+            }
+        }
+    ]
+}

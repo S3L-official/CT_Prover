@@ -1,0 +1,100 @@
+[
+  "Î¯±\"±hˆá\u0004á£?wv%½",
+  [
+    [
+      "Vale.Def.Words_s.two",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "6420429c26fdd5a7e6fb371ed8d6a86c"
+    ],
+    [
+      "Vale.Def.Words_s.four",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "8c245e3dcdd6bdd2b41679180810ef10"
+    ],
+    [
+      "Vale.Def.Words_s.eight",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "e9b4fd10904f5d8f273d4b721ad174db"
+    ],
+    [
+      "Vale.Def.Words_s.uu___74",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "fd204da9360c29d5d4e150d9cf90f24e"
+    ],
+    [
+      "Vale.Def.Words_s.uu___75",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "2a1c90cc453bf41e3cab02b4d77937c0"
+    ],
+    [
+      "Vale.Def.Words_s.uu___76",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "b9f01d3ff0fb4cb49d4e707b6df39a9a"
+    ],
+    [
+      "Vale.Def.Words_s.uu___77",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "c62351a17a0fcfe79813227749f1cd39"
+    ],
+    [
+      "Vale.Def.Words_s.uu___78",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "f59ceb016a2996706f69624df589b140"
+    ],
+    [
+      "Vale.Def.Words_s.int_to_natN",
+      1,
+      1,
+      0,
+      [ "@query" ],
+      0,
+      "06bf571b0f8bd809fb24da4ae869681d"
+    ],
+    [
+      "Vale.Def.Words_s.int_to_natN",
+      2,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_Prims.pos",
+        "int_inversion", "primitive_Prims.op_Modulus",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5"
+      ],
+      0,
+      "68ca17421a7c0a1d75d21719e8d0b26a"
+    ]
+  ]
+]

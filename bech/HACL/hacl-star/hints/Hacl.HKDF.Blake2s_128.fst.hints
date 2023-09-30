@@ -1,0 +1,33 @@
+[
+  "[\u0015S#s≠¬Å√wéa'À\u0007\u0017",
+  [
+    [
+      "Hacl.HKDF.Blake2s_128.expand_blake2s_128",
+      1,
+      0,
+      0,
+      [
+        "@query", "constructor_distinct_Spec.Hash.Definitions.Blake2S",
+        "equality_tok_Spec.Hash.Definitions.Blake2S@tok",
+        "equation_Spec.Hash.Definitions.is_shake",
+        "projection_inverse_BoxBool_proj_0"
+      ],
+      0,
+      "f3af9065ec20693505d20174f42f2fa3"
+    ],
+    [
+      "Hacl.HKDF.Blake2s_128.extract_blake2s_128",
+      1,
+      0,
+      0,
+      [
+        "@query", "constructor_distinct_Spec.Hash.Definitions.Blake2S",
+        "equality_tok_Spec.Hash.Definitions.Blake2S@tok",
+        "equation_Spec.Hash.Definitions.is_shake",
+        "projection_inverse_BoxBool_proj_0"
+      ],
+      0,
+      "11559ac5b1df30688b74e80d40ee6dde"
+    ]
+  ]
+]

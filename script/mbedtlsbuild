@@ -1,0 +1,4 @@
+#!/bin/bash
+file=$1
+
+clang-12 -c -emit-llvm -O0 -g -gcolumn-info -Xclang -disable-O0-optnone -DMEMORY_MODULE_NO_REUSE_IMPLS -DMBEDTLS_CONFIG_FILE='<config-ccm-psk-tls1_2.h>' -fcolor-diagnostics -I../../bech/mbedtls/library -I../../bech/mbedtls/include -D_FILE_OFFSET_BITS=64 -I../../bech/mbedtls/3rdparty/everest/include -I../../bech/mbedtls/3rdparty/everest/include/everest -I../../bech/mbedtls/3rdparty/everest/include/everest/kremlib -I../../bech/mbedtls/configs $file -o ${file//.c/.bc}

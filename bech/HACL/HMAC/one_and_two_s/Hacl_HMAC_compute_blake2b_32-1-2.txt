@@ -1,0 +1,4 @@
+Hacl_HMAC_compute_blake2b_32-bool.bpl(141194,19): Error: undeclared identifier: $i46.dup
+Hacl_HMAC_compute_blake2b_32-bool.bpl(141196,19): Error: undeclared identifier: $i60.dup
+Hacl_HMAC_compute_blake2b_32-bool.bpl(141197,19): Error: undeclared identifier: $i84.dup
+3 name resolution errors detected in Hacl_HMAC_compute_blake2b_32-bool.bpl

@@ -1,0 +1,11 @@
+// BAM! BAM! Boogieman version 1.0-63-g82062a3
+//                     copyright (c) 2015, Michael Emmi
+// 
+all shadow: 
+2951
+tainted shadow: 
+172
+avoid shadow: 
+2779
+line of code in boogie: 
+8067

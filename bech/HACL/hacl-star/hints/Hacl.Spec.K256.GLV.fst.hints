@@ -1,0 +1,195 @@
+[
+  "^®Ž”ìgr†\u0014s,íðÊd6",
+  [
+    [
+      "Hacl.Spec.K256.GLV.lambda",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "805efcaca26144b4318fe922cb7b4016"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.beta",
+      1,
+      0,
+      0,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "equation_Spec.K256.PointOps.prime",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_5971b9fd4e06025a9ac5c931505c19d8",
+        "typing_Spec.K256.PointOps.prime"
+      ],
+      0,
+      "8549254f2257d1c05a1d315b8d02ef5e"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.a1",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "dec971559291534856080f2991b13949"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.minus_b1",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "9d0cc133885303d9eeec481e1d55bf3f"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.a2",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "8e046ea3551725bffac074ad21fa2607"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.b2",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "5961ea5e672e2557a79aba50a569e496"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.minus_lambda",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "f4559799c6b9a1681fe2ac54f0ab4189"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.b1",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "e8394ce1cda3817263efffa3d08806f2"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.minus_b2",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "12d1d704e892ec24775ba455fb6ca092"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.g1",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "4697113e3f04239983c2c214fb3f54dd"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.g2",
+      1,
+      0,
+      0,
+      [
+        "@query", "equation_Spec.K256.PointOps.q",
+        "projection_inverse_BoxInt_proj_0"
+      ],
+      0,
+      "325e0a2ede32ee93ab6ccafaae8e867d"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.qmul_shift_384",
+      1,
+      0,
+      0,
+      [ "@query" ],
+      0,
+      "d09bebb612c57260aabab9304cdeb40c"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.qmul_shift_384_lemma",
+      1,
+      0,
+      0,
+      [
+        "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Hacl.Spec.K256.GLV.qmul_shift_384", "equation_Prims.nat",
+        "equation_Spec.K256.PointOps.q", "equation_Spec.K256.PointOps.qelem",
+        "int_inversion", "primitive_Prims.op_Addition",
+        "primitive_Prims.op_Division", "primitive_Prims.op_LessThan",
+        "primitive_Prims.op_Modulus", "primitive_Prims.op_Multiply",
+        "projection_inverse_BoxBool_proj_0",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_3abfe4124fc12c50f5f1600a0293cedd",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_7d84b8f3dff73d3cc195fbe597f5a194",
+        "typing_Spec.K256.PointOps.q"
+      ],
+      0,
+      "ff39a1425562e9acdaed441e369f6a03"
+    ],
+    [
+      "Hacl.Spec.K256.GLV.scalar_split_lambda",
+      1,
+      0,
+      0,
+      [
+        "@MaxIFuel_assumption",
+        "@fuel_correspondence_Prims.pow2.fuel_instrumented", "@query",
+        "equation_Hacl.Spec.K256.GLV.g1", "equation_Hacl.Spec.K256.GLV.g2",
+        "equation_Hacl.Spec.K256.GLV.qmul_shift_384", "equation_Prims.nat",
+        "equation_Prims.pos", "equation_Spec.K256.PointOps.q",
+        "equation_Spec.K256.PointOps.qelem", "int_typing",
+        "primitive_Prims.op_Addition", "primitive_Prims.op_Division",
+        "primitive_Prims.op_Modulus", "primitive_Prims.op_Multiply",
+        "projection_inverse_BoxInt_proj_0",
+        "refinement_interpretation_Tm_refine_3abfe4124fc12c50f5f1600a0293cedd",
+        "refinement_interpretation_Tm_refine_542f9d4f129664613f2483a6c88bc7c2",
+        "refinement_interpretation_Tm_refine_774ba3f728d91ead8ef40be66c9802e5",
+        "typing_Prims.pow2"
+      ],
+      0,
+      "4a9e887d028a438590a007dc79983a19"
+    ]
+  ]
+]
