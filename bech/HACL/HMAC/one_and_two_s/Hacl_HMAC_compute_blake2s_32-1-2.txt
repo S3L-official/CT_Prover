@@ -1,4 +1,0 @@
-Hacl_HMAC_compute_blake2s_32-bool.bpl(117031,19): Error: undeclared identifier: $i24.dup
-Hacl_HMAC_compute_blake2s_32-bool.bpl(117033,19): Error: undeclared identifier: $i38.dup
-Hacl_HMAC_compute_blake2s_32-bool.bpl(117034,19): Error: undeclared identifier: $i62.dup
-3 name resolution errors detected in Hacl_HMAC_compute_blake2s_32-bool.bpl

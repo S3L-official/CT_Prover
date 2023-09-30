@@ -1,9 +1,0 @@
-{
-    "libs": "../BearSSL/src/symcipher/aes_big_enc.c ../BearSSL/src/symcipher/aes_big_dec.c  ../BearSSL/src/symcipher/aes_common.c",
-	"cpath": "../BearSSL/src:../BearSSL/inc",
-    "filenames": [
-        {"example": "aes_big.c", "entrypoint":["encrypt_wrapper", "decrypt_wrapper", "key_schedule_wrapper"]} 
-    ]
-}
-
-

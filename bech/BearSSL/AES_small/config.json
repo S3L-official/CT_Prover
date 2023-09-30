@@ -1,9 +1,0 @@
-{
-    "libs": "../BearSSL/src/symcipher/aes_small_cbcdec.c ../BearSSL/src/symcipher/aes_small_cbcenc.c  ../BearSSL/src/symcipher/aes_small_ctr.c ../BearSSL/src/symcipher/aes_small_ctr.c ../BearSSL/src/symcipher/aes_small_dec.c ../BearSSL/src/symcipher/aes_small_enc.c ../BearSSL/src/symcipher/aes_small_ctrcbc.c",
-	"cpath": "../BearSSL/src:../BearSSL/inc",
-    "filenames": [
-        {"example": "aes_small.c", "entrypoint":["encrypt_wrapper", "decrypt_wrapper", "cbc_ctr_wrapper", "cbc_mac_wrapper", "ctr_cbc_encrypt_wrapper", "cbc_small_encrypt_wrapper"]} 
-    ]
-}
-
-

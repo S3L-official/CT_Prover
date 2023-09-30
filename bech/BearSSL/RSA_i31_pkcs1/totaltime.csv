@@ -1,2 +1,0 @@
-LIB,Filename,Entry-point,1,2,2-s,3,3-s,1+2,1+2_s,1+3,1+3_s,1+2+3,loc,all-sens pos,ct-verify pass?,Taint pass?,taint res,High taint pass?,Is_high_taint_1_2_pass
-BearSSL,RSA_i31_pkcs1,sign,0.33855319023132324,24.7760329246521,31.924065113067627,30.9688081741333,26.590991020202637,19.61206841468811,21.158169984817505,23.73012900352478,28.627169132232666,126.4111397266388,6510,270,Still Have Leak!,Still Have Leak!,142,Still Have Leak!,Still Have Leak!

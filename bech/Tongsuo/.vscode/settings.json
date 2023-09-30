@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "aes_local.h": "c",
-        "rsa_local.h": "c"
-    }
-}

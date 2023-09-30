@@ -1,7 +1,0 @@
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65767,21): Error: undeclared identifier: $i43
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65767,41): Error: undeclared identifier: $i43.shadow
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65769,21): Error: undeclared identifier: $i57
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65769,41): Error: undeclared identifier: $i57.shadow
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65770,21): Error: undeclared identifier: $i81
-Hacl_HMAC_compute_sha2_384-shadow.bpl(65770,41): Error: undeclared identifier: $i81.shadow
-6 name resolution errors detected in Hacl_HMAC_compute_sha2_384-shadow.bpl

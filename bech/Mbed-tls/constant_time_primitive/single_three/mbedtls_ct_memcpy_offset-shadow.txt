@@ -1,2 +1,0 @@
-mbedtls_ct_memcpy_offset-shadow.bpl(1903,2): Error: wrong number of result variables in call to mbedtls_ct_memcpy_offset: 2
-1 name resolution errors detected in mbedtls_ct_memcpy_offset-shadow.bpl

@@ -1,7 +1,0 @@
-#!/bin/bash
-filename=$1
-filehead=${filename/%.c}
-rm $filehead.bc
-rm $filehead.ll
-rm $filehead-opt.ll
-# echo $filehead

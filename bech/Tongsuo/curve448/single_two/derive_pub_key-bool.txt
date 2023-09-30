@@ -1,3 +1,0 @@
-derive_pub_key-bool.bpl(18345,25): Verification of 'derive_pub_key_wrapper' timed out after 3600 seconds
-
-Boogie program verifier finished with 0 verified, 0 errors, 1 time out

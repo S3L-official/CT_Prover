@@ -1,8 +1,0 @@
-{
-    "filenames": [
-        {"example": "ssl3_cbc_remove_padding_wrapper.c", "entrypoint":["ssl3_cbc_remove_padding_wrapper"]},
-        {"example": "tls1_cbc_remove_padding_wrapper.c", "entrypoint":["tls1_cbc_remove_padding_wrapper"]},
-        {"example": "ssl3_cbc_copy_mac_wrapper.c", "entrypoint":["ssl3_cbc_copy_mac_wrapper"]},
-        {"example": "ssl3_cbc_digest_record_wrapper.c", "entrypoint":["ssl3_cbc_digest_record_wrapper"]}
-    ]
-}

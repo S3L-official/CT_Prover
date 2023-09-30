@@ -1,7 +1,0 @@
-
-{
-	"timelimit" : "600",
-	"errorlimit" : "5",
-	"UNROLL" : "1",
-	"LOOPLIMIT" : "1"
-}

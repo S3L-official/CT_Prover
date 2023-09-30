@@ -1,3 +1,0 @@
-#!/bin/bash
-/home/luwei/phasar/build/tools/phasar-llvm/phasar-llvm -m $1 -D ifds-taint --analysis-config --emit-text-report $2 >> $3 2>&1
-# 需要三个参数 module taint config 和 输出txt

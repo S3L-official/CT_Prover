@@ -1,4 +1,0 @@
-Hacl_HMAC_compute_sha2_512-bool.bpl(65870,19): Error: undeclared identifier: $i43.dup
-Hacl_HMAC_compute_sha2_512-bool.bpl(65872,19): Error: undeclared identifier: $i57.dup
-Hacl_HMAC_compute_sha2_512-bool.bpl(65873,19): Error: undeclared identifier: $i81.dup
-3 name resolution errors detected in Hacl_HMAC_compute_sha2_512-bool.bpl

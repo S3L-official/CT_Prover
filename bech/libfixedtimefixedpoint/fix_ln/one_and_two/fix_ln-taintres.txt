@@ -1,7 +1,0 @@
-PhASAR v0222
-A LLVM-based static analysis framework
-
-
------ Finish the Analysis -----
-all taint position!
-0

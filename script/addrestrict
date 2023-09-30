@@ -1,3 +1,0 @@
-#!/bin/bash
-# llvm-12 tool chain
-opt-12 -enable-new-pm=0 -load /home/luwei/script/tool/restrict/luweiRestrict.so -S --luweiRestrict $1 -o $2

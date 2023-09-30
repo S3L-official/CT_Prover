@@ -1,4 +1,0 @@
-all sensitive: 
-2
-left sensitive: 
-0

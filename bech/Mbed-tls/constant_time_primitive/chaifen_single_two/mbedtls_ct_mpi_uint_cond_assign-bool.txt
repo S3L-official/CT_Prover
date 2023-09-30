@@ -1,2 +1,0 @@
-mbedtls_ct_mpi_uint_cond_assign-bool.bpl(1673,2): Error: wrong number of result variables in call to mbedtls_ct_mpi_uint_cond_assign: 2
-1 name resolution errors detected in mbedtls_ct_mpi_uint_cond_assign-bool.bpl
