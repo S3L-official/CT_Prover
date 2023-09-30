@@ -1,0 +1,14 @@
+{
+	"files.associations": {
+		"hacl_curve25519_51.h": "c",
+		"hacl_curve25519_64.h": "c",
+		"ct-verif.h": "c",
+		"hacl_ed25519.h": "c",
+		"hacl_chacha20.h": "c",
+		"hacl_poly1305_32.h": "c",
+		"hacl_poly1305_128.h": "c",
+		"evercrypt_ed25519.h": "c",
+		"hacl_hmac.h": "c",
+		"hacl_ec_k256.h": "c"
+	}
+}

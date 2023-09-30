@@ -1,0 +1,44 @@
+encrypt-bool.bpl(2161,3): Error: This assertion might not hold.
+Execution trace:
+    encrypt-bool.bpl(3047,1): $bb0
+    encrypt-bool.bpl(17668,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-bool.bpl(3047,1): $bb0$1
+    encrypt-bool.bpl(1553,1): inline$br_aes_small_encrypt$0$$bb0
+    encrypt-bool.bpl(17629,23): inline$$alloc$0$Entry
+    encrypt-bool.bpl(17651,3): inline$$$alloc$0$anon0
+    encrypt-bool.bpl(17653,7): inline$$$alloc$0$anon2_Then
+    encrypt-bool.bpl(1553,1): inline$br_aes_small_encrypt$0$$bb0$1
+    encrypt-bool.bpl(1566,1): inline$br_aes_small_encrypt$0$$bb1
+    encrypt-bool.bpl(1615,1): inline$br_aes_small_encrypt$0$$bb3
+    encrypt-bool.bpl(1891,1): inline$add_round_key.7$0$$bb0
+    encrypt-bool.bpl(1901,1): inline$add_round_key.7$0$$bb1
+    encrypt-bool.bpl(2064,1): inline$add_round_key.7$0$$bb3
+    encrypt-bool.bpl(1615,1): inline$br_aes_small_encrypt$0$$bb3$1
+    encrypt-bool.bpl(1640,1): inline$br_aes_small_encrypt$0$$bb5
+    encrypt-bool.bpl(1655,1): inline$br_aes_small_encrypt$0$$bb6
+    encrypt-bool.bpl(2114,1): inline$sub_bytes$1$$bb0
+    encrypt-bool.bpl(2122,1): inline$sub_bytes$1$$bb1
+    encrypt-bool.bpl(2136,1): inline$sub_bytes$1$$bb2
+encrypt-bool.bpl(2161,3): Error: This assertion might not hold.
+Execution trace:
+    encrypt-bool.bpl(3047,1): $bb0
+    encrypt-bool.bpl(17668,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-bool.bpl(3047,1): $bb0$1
+    encrypt-bool.bpl(1553,1): inline$br_aes_small_encrypt$0$$bb0
+    encrypt-bool.bpl(17629,23): inline$$alloc$0$Entry
+    encrypt-bool.bpl(17651,3): inline$$$alloc$0$anon0
+    encrypt-bool.bpl(17653,7): inline$$$alloc$0$anon2_Then
+    encrypt-bool.bpl(1553,1): inline$br_aes_small_encrypt$0$$bb0$1
+    encrypt-bool.bpl(1566,1): inline$br_aes_small_encrypt$0$$bb1
+    encrypt-bool.bpl(1615,1): inline$br_aes_small_encrypt$0$$bb3
+    encrypt-bool.bpl(1891,1): inline$add_round_key.7$0$$bb0
+    encrypt-bool.bpl(1901,1): inline$add_round_key.7$0$$bb1
+    encrypt-bool.bpl(2064,1): inline$add_round_key.7$0$$bb3
+    encrypt-bool.bpl(1615,1): inline$br_aes_small_encrypt$0$$bb3$1
+    encrypt-bool.bpl(1640,1): inline$br_aes_small_encrypt$0$$bb5
+    encrypt-bool.bpl(1701,1): inline$br_aes_small_encrypt$0$$bb7
+    encrypt-bool.bpl(2114,1): inline$sub_bytes$0$$bb0
+    encrypt-bool.bpl(2122,1): inline$sub_bytes$0$$bb1
+    encrypt-bool.bpl(2136,1): inline$sub_bytes$0$$bb2
+
+Boogie program verifier finished with 0 verified, 2 errors

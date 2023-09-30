@@ -1,0 +1,7 @@
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117015,21): Error: undeclared identifier: $i24
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117015,41): Error: undeclared identifier: $i24.shadow
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117017,21): Error: undeclared identifier: $i38
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117017,41): Error: undeclared identifier: $i38.shadow
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117018,21): Error: undeclared identifier: $i62
+Hacl_HMAC_compute_blake2s_32-shadow.bpl(117018,41): Error: undeclared identifier: $i62.shadow
+6 name resolution errors detected in Hacl_HMAC_compute_blake2s_32-shadow.bpl

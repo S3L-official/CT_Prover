@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "ossl_x448",
+            "params": {
+                "source": [
+                    1
+                ]
+            }
+        }
+    ]
+}

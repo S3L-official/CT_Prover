@@ -1,0 +1,7 @@
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52986,21): Error: undeclared identifier: $i17
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52986,41): Error: undeclared identifier: $i17.shadow
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52988,21): Error: undeclared identifier: $i31
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52988,41): Error: undeclared identifier: $i31.shadow
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52989,21): Error: undeclared identifier: $i55
+Hacl_HMAC_compute_sha2_256-shadow.bpl(52989,41): Error: undeclared identifier: $i55.shadow
+6 name resolution errors detected in Hacl_HMAC_compute_sha2_256-shadow.bpl

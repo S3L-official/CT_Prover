@@ -1,0 +1,54 @@
+encrypt-shadow.bpl(3007,3): Error: This loop invariant might not hold on entry.
+Execution trace:
+    encrypt-shadow.bpl(4769,1): $bb0
+    encrypt-shadow.bpl(19447,1): inline$__SMACK_static_init$0$$bb0
+    encrypt-shadow.bpl(19431,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-shadow.bpl(4769,1): $bb0$1
+    encrypt-shadow.bpl(2489,1): inline$AES_encrypt$0$$bb0
+    encrypt-shadow.bpl(2501,1): inline$AES_encrypt$0$$bb1
+    encrypt-shadow.bpl(2524,1): inline$AES_encrypt$0$$bb4
+    encrypt-shadow.bpl(2540,1): inline$AES_encrypt$0$$bb6
+encrypt-shadow.bpl(3008,3): Error: This loop invariant might not hold on entry.
+Execution trace:
+    encrypt-shadow.bpl(4769,1): $bb0
+    encrypt-shadow.bpl(19447,1): inline$__SMACK_static_init$0$$bb0
+    encrypt-shadow.bpl(19431,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-shadow.bpl(4769,1): $bb0$1
+    encrypt-shadow.bpl(2489,1): inline$AES_encrypt$0$$bb0
+    encrypt-shadow.bpl(2501,1): inline$AES_encrypt$0$$bb1
+    encrypt-shadow.bpl(2524,1): inline$AES_encrypt$0$$bb4
+    encrypt-shadow.bpl(2540,1): inline$AES_encrypt$0$$bb6
+encrypt-shadow.bpl(3009,3): Error: This loop invariant might not hold on entry.
+Execution trace:
+    encrypt-shadow.bpl(4769,1): $bb0
+    encrypt-shadow.bpl(19447,1): inline$__SMACK_static_init$0$$bb0
+    encrypt-shadow.bpl(19431,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-shadow.bpl(4769,1): $bb0$1
+    encrypt-shadow.bpl(2489,1): inline$AES_encrypt$0$$bb0
+    encrypt-shadow.bpl(2501,1): inline$AES_encrypt$0$$bb1
+    encrypt-shadow.bpl(2524,1): inline$AES_encrypt$0$$bb4
+    encrypt-shadow.bpl(2540,1): inline$AES_encrypt$0$$bb6
+encrypt-shadow.bpl(3011,3): Error: This loop invariant might not hold on entry.
+Execution trace:
+    encrypt-shadow.bpl(4769,1): $bb0
+    encrypt-shadow.bpl(19447,1): inline$__SMACK_static_init$0$$bb0
+    encrypt-shadow.bpl(19431,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-shadow.bpl(4769,1): $bb0$1
+    encrypt-shadow.bpl(2489,1): inline$AES_encrypt$0$$bb0
+    encrypt-shadow.bpl(2501,1): inline$AES_encrypt$0$$bb1
+    encrypt-shadow.bpl(2524,1): inline$AES_encrypt$0$$bb4
+    encrypt-shadow.bpl(2540,1): inline$AES_encrypt$0$$bb6
+encrypt-shadow.bpl(3471,3): Error: This assertion might not hold.
+Execution trace:
+    encrypt-shadow.bpl(4769,1): $bb0
+    encrypt-shadow.bpl(19447,1): inline$__SMACK_static_init$0$$bb0
+    encrypt-shadow.bpl(19431,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    encrypt-shadow.bpl(4769,1): $bb0$1
+    encrypt-shadow.bpl(2489,1): inline$AES_encrypt$0$$bb0
+    encrypt-shadow.bpl(2501,1): inline$AES_encrypt$0$$bb1
+    encrypt-shadow.bpl(2524,1): inline$AES_encrypt$0$$bb4
+    encrypt-shadow.bpl(2540,1): inline$AES_encrypt$0$$bb6
+    encrypt-shadow.bpl(3004,1): inline$AES_encrypt$0$$bb9
+    encrypt-shadow.bpl(3455,1): inline$AES_encrypt$0$$bb11
+
+Boogie program verifier finished with 0 verified, 5 errors

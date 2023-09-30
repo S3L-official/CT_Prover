@@ -1,0 +1,2 @@
+LIB,Filename,Entry-point,1,2,2-s,3,3-s,1+2,1+2_s,1+3,1+3_s,1+2+3,loc,all-sens pos,ct-verify pass?,Taint pass?,taint res,High taint pass?,Is_high_taint_1_2_pass
+libsodium,Salsa20,crypto_core_salsa20,0.14101195335388184,7.982100486755371,7.854220867156982,7.973462820053101,8.067287683486938,0.13484525680541992,0.13288164138793945,0.12891411781311035,0.14077401161193848,0.1452195644378662,1094,9,Verified!,Verified!,0,Verified!,Verified!

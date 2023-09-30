@@ -1,0 +1,2 @@
+LIB,Filename,Entry-point,1,2,2-s,3,3-s,1+2,1+2_s,1+3,1+3_s,1+2+3,loc,all-sens pos,ct-verify pass?,Taint pass?,taint res,High taint pass?,Is_high_taint_1_2_pass
+curve25519-donna,portable-c,curve25519_donna,0.5870137214660645,3674.450428724289,3837.088980436325,3701.5294694900513,3775.3709502220154,0.550368070602417,0.5859506130218506,0.6395778656005859,0.5842742919921875,0.6341471672058105,11737,722,Time Out!,Verified!,0,Time Out!,Verified!

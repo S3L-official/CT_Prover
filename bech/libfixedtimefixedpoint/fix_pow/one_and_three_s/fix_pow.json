@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "fix_pow",
+            "params": {
+                "source": [
+                    0,1
+                ]
+            }
+        }
+    ]
+}

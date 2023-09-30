@@ -1,0 +1,3 @@
+api_mul-shadow.bpl(17418,25): Verification of 'api_mul_wrapper' timed out after 3600 seconds
+
+Boogie program verifier finished with 0 verified, 0 errors, 1 time out

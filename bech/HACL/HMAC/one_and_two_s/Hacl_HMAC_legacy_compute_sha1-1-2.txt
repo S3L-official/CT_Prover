@@ -1,0 +1,4 @@
+Hacl_HMAC_legacy_compute_sha1-bool.bpl(4084,19): Error: undeclared identifier: $i17.dup
+Hacl_HMAC_legacy_compute_sha1-bool.bpl(4086,19): Error: undeclared identifier: $i31.dup
+Hacl_HMAC_legacy_compute_sha1-bool.bpl(4087,19): Error: undeclared identifier: $i55.dup
+3 name resolution errors detected in Hacl_HMAC_legacy_compute_sha1-bool.bpl

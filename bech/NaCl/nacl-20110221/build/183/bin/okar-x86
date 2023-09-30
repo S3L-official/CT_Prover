@@ -1,0 +1,4 @@
+#!/bin/sh
+PATH="/home/luwei/bech/nacl-20110221/build/183/bin:/usr/sfw/bin:/usr/local/bin:/home/luwei/smack-deps/corral:/home/luwei/smack-deps/boogie:/home/luwei/smack-deps/z3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/luwei/.dotnet/tools:/usr/local/cuda-11.7/bin:/usr/local/llvm-13/bin:/home/luwei/scriptexport:~/.ruby/bin:/home/luwei/script"
+export PATH
+ar "$@"

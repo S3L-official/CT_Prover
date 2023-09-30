@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'gcc -m32 -O3 -fomit-frame-pointer -funroll-loops'
+echo 'gcc -m32 -O -fomit-frame-pointer'
+echo 'gcc -m32 -fomit-frame-pointer'

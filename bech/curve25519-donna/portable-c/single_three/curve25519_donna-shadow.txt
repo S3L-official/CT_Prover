@@ -1,0 +1,3 @@
+curve25519_donna-shadow.bpl(21752,25): Verification of 'curve25519_donna_wrapper' timed out after 3600 seconds
+
+Boogie program verifier finished with 0 verified, 0 errors, 1 time out

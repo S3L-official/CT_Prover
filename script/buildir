@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+clang_opt=""
+while getopts ":c:" o; do
+    case "${o}" in
+        c)
+			clang_opt=${OPTARG}
+            ;;
+        *)
+           file=${file}+${OPTARG}
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+
+# for file in $@
+# do
+# path=$(dirname $file)
+# done
+
+
+# totalfile=$path"/total.bc"
+
+# res=""
+for file in $@
+do
+# dirfile=$path"/"$(basename $file)
+# echo $file
+dirfile=${file//.c/.bc}
+echo $dirfile
+# res=$res" "$dirfile
+clang-12 -c -emit-llvm -O0 -g -gcolumn-info -Xclang -disable-O0-optnone -DMEMORY_MODULE_NO_REUSE_IMPLS -fcolor-diagnostics -I/home/luwei/smack/share/smack/include $clang_opt $file -o $dirfile
+done
+# if [ $# -eq 1 ]; then
+#     mv $dirfile $totalfile
+# else
+#     llvm-link-12 $res -o $totalfile
+#     rm $res
+# fi
+# llvm-dis-12 $totalfile
+# rm $totalfile
+# totalfile=$path"/total.ll"
+# opt-12 -mem2reg -S $totalfile -o $totalfile
+# mv $totalfile ${dirfile//.bc/.ll}
+# echo $filehead

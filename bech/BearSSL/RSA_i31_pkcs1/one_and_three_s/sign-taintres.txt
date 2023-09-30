@@ -1,0 +1,128 @@
+PhASAR v0222
+A LLVM-based static analysis framework
+
+
+----- Finish the Analysis -----
+  store i8 4, i8* %64, align 1, !dbg !251, !psr.id !252, !Tainted !253
+  br i1 %7, label %8, label %17, !dbg !89, !psr.id !102, !Tainted !103
+  br i1 %10, label %11, label %24, !dbg !108, !psr.id !109, !Tainted !110
+  br i1 %6, label %7, label %23, !dbg !95, !psr.id !110, !Tainted !111
+  %9 = load i8, i8* %8, align 1, !dbg !112, !psr.id !115, !Tainted !111
+  br i1 %7, label %8, label %10, !dbg !94, !psr.id !95, !Tainted !96
+  br i1 %20, label %21, label %23, !dbg !134, !psr.id !135, !Tainted !96
+  br i1 %26, label %27, label %47, !dbg !160, !psr.id !170, !Tainted !96
+  %30 = load i8, i8* %29, align 1, !dbg !175, !psr.id !177, !Tainted !96
+  br i1 %9, label %10, label %11, !dbg !95, !psr.id !96, !Tainted !97
+  store i32 %1, i32* %0, align 4, !dbg !82, !psr.id !83, !Tainted !84
+  br i1 %16, label %17, label %20, !dbg !133, !psr.id !134, !Tainted !97
+  store i8 %39, i8* %40, align 1, !dbg !199, !psr.id !200, !Tainted !97
+  store i8 %43, i8* %44, align 1, !dbg !208, !psr.id !209, !Tainted !97
+  store i8 %46, i8* %47, align 1, !dbg !215, !psr.id !216, !Tainted !97
+  store i8 %4, i8* %5, align 1, !dbg !86, !psr.id !87, !Tainted !88
+  store i8 %7, i8* %8, align 1, !dbg !95, !psr.id !96, !Tainted !88
+  store i8 %10, i8* %11, align 1, !dbg !103, !psr.id !104, !Tainted !88
+  store i8 %12, i8* %13, align 1, !dbg !109, !psr.id !110, !Tainted !88
+  br i1 %10, label %11, label %45, !dbg !104, !psr.id !105, !Tainted !106
+  br i1 %17, label %18, label %40, !dbg !131, !psr.id !132, !Tainted !106
+  store i32 %41, i32* %42, align 4, !dbg !188, !psr.id !189, !Tainted !106
+  br i1 %18, label %19, label %20, !dbg !123, !psr.id !124, !Tainted !125
+  br i1 %28, label %29, label %30, !dbg !155, !psr.id !156, !Tainted !125
+  store i32 1, i32* %61, align 4, !dbg !248, !psr.id !249, !Tainted !125
+  br i1 %111, label %112, label %121, !dbg !433, !psr.id !434, !Tainted !125
+  %114 = load i32, i32* %113, align 4, !dbg !435, !psr.id !438, !Tainted !125
+  %117 = load i32, i32* %116, align 4, !dbg !443, !psr.id !444, !Tainted !125
+  store i32 %118, i32* %116, align 4, !dbg !443, !psr.id !446, !Tainted !125
+  store i32 %1, i32* %0, align 4, !dbg !82, !psr.id !83, !Tainted !84
+  br i1 %15, label %16, label %171, !dbg !121, !psr.id !122, !Tainted !123
+  %19 = load i32, i32* %18, align 4, !dbg !127, !psr.id !129, !Tainted !123
+  %21 = load i32, i32* %20, align 4, !dbg !133, !psr.id !135, !Tainted !123
+  %24 = load i32, i32* %23, align 4, !dbg !133, !psr.id !138, !Tainted !123
+  %26 = load i32, i32* %25, align 4, !dbg !133, !psr.id !140, !Tainted !123
+  br i1 %33, label %34, label %133, !dbg !163, !psr.id !164, !Tainted !123
+  %37 = load i32, i32* %36, align 4, !dbg !168, !psr.id !170, !Tainted !123
+  %42 = load i32, i32* %41, align 4, !dbg !173, !psr.id !177, !Tainted !123
+  store i32 %56, i32* %58, align 4, !dbg !207, !psr.id !208, !Tainted !123
+  %61 = load i32, i32* %60, align 4, !dbg !211, !psr.id !213, !Tainted !123
+  %66 = load i32, i32* %65, align 4, !dbg !216, !psr.id !220, !Tainted !123
+  store i32 %80, i32* %82, align 4, !dbg !248, !psr.id !249, !Tainted !123
+  %85 = load i32, i32* %84, align 4, !dbg !252, !psr.id !254, !Tainted !123
+  %90 = load i32, i32* %89, align 4, !dbg !257, !psr.id !261, !Tainted !123
+  store i32 %104, i32* %106, align 4, !dbg !289, !psr.id !290, !Tainted !123
+  %109 = load i32, i32* %108, align 4, !dbg !293, !psr.id !295, !Tainted !123
+  %114 = load i32, i32* %113, align 4, !dbg !298, !psr.id !302, !Tainted !123
+  store i32 %128, i32* %130, align 4, !dbg !330, !psr.id !331, !Tainted !123
+  br i1 %135, label %136, label %162, !dbg !352, !psr.id !353, !Tainted !123
+  %139 = load i32, i32* %138, align 4, !dbg !357, !psr.id !359, !Tainted !123
+  %144 = load i32, i32* %143, align 4, !dbg !362, !psr.id !366, !Tainted !123
+  store i32 %158, i32* %159, align 4, !dbg !394, !psr.id !395, !Tainted !123
+  store i32 %166, i32* %167, align 4, !dbg !414, !psr.id !415, !Tainted !123
+  store i32 %173, i32* %174, align 4, !dbg !433, !psr.id !434, !Tainted !123
+  br i1 %36, label %37, label %72, !dbg !159, !psr.id !160, !Tainted !161
+  br i1 %42, label %43, label %65, !dbg !186, !psr.id !187, !Tainted !161
+  store i32 %66, i32* %69, align 4, !dbg !245, !psr.id !246, !Tainted !161
+  br i1 %6, label %7, label %8, !dbg !90, !psr.id !91, !Tainted !92
+  br i1 %9, label %10, label %22, !dbg !99, !psr.id !100, !Tainted !92
+  %28 = load i32, i32* %27, align 4, !dbg !142, !psr.id !144, !Tainted !92
+  br i1 %29, label %30, label %44, !dbg !149, !psr.id !150, !Tainted !92
+  %32 = load i32, i32* %31, align 4, !dbg !151, !psr.id !154, !Tainted !92
+  %41 = load i32, i32* %40, align 4, !dbg !173, !psr.id !175, !Tainted !92
+  %43 = load i32, i32* %42, align 4, !dbg !178, !psr.id !180, !Tainted !92
+  %46 = load i32, i32* %45, align 4, !dbg !185, !psr.id !188, !Tainted !92
+  %51 = load i32, i32* %50, align 4, !dbg !195, !psr.id !197, !Tainted !92
+  %63 = load i32, i32* %62, align 4, !dbg !221, !psr.id !223, !Tainted !92
+  %68 = load i32, i32* %67, align 4, !dbg !230, !psr.id !232, !Tainted !92
+  %73 = load i32, i32* %72, align 4, !dbg !240, !psr.id !242, !Tainted !92
+  %78 = load i32, i32* %77, align 4, !dbg !249, !psr.id !251, !Tainted !92
+  br i1 %93, label %94, label %118, !dbg !308, !psr.id !309, !Tainted !92
+  br i1 %10, label %11, label %12, !dbg !102, !psr.id !103, !Tainted !104
+  br i1 %18, label %19, label %33, !dbg !124, !psr.id !125, !Tainted !104
+  br i1 %26, label %27, label %32, !dbg !148, !psr.id !149, !Tainted !104
+  store i32 0, i32* %29, align 4, !dbg !155, !psr.id !156, !Tainted !104
+  store i32 0, i32* %42, align 4, !dbg !187, !psr.id !188, !Tainted !104
+  br i1 %46, label %47, label %52, !dbg !203, !psr.id !204, !Tainted !104
+  %49 = load i32, i32* %48, align 4, !dbg !205, !psr.id !208, !Tainted !104
+  br i1 %8, label %9, label %10, !dbg !93, !psr.id !94, !Tainted !95
+  br i1 %15, label %16, label %28, !dbg !119, !psr.id !120, !Tainted !95
+  store i32 %.0, i32* %29, align 4, !dbg !157, !psr.id !158, !Tainted !95
+  %5 = load i32, i32* %4, align 4, !dbg !84, !psr.id !86, !Tainted !87
+  br i1 %10, label %11, label %24, !dbg !109, !psr.id !110, !Tainted !87
+  %13 = load i32, i32* %12, align 4, !dbg !111, !psr.id !114, !Tainted !87
+  store i32 %20, i32* %21, align 4, !dbg !138, !psr.id !139, !Tainted !87
+  br i1 %8, label %9, label %12, !dbg !98, !psr.id !99, !Tainted !100
+  br i1 %15, label %16, label %19, !dbg !113, !psr.id !130, !Tainted !131
+  br i1 %31, label %32, label %35, !dbg !153, !psr.id !170, !Tainted !131
+  %77 = load i8, i8* %76, align 1, !dbg !300, !psr.id !302, !Tainted !131
+  store i8 1, i8* %16, align 1, !dbg !115, !psr.id !116, !Tainted !117
+  br i1 %9, label %10, label %22, !dbg !96, !psr.id !97, !Tainted !98
+  br i1 %12, label %13, label %14, !dbg !105, !psr.id !106, !Tainted !98
+  store i8 0, i8* %15, align 1, !dbg !112, !psr.id !113, !Tainted !98
+  store i8 0, i8* %21, align 1, !dbg !132, !psr.id !133, !Tainted !98
+  %24 = load i8, i8* %23, align 1, !dbg !136, !psr.id !139, !Tainted !98
+  br i1 %28, label %29, label %30, !dbg !150, !psr.id !151, !Tainted !98
+  store i8 0, i8* %31, align 1, !dbg !157, !psr.id !158, !Tainted !98
+  store i8 1, i8* %32, align 1, !dbg !161, !psr.id !162, !Tainted !98
+  store i8 0, i8* %38, align 1, !dbg !178, !psr.id !179, !Tainted !98
+  store i8 48, i8* %40, align 1, !dbg !184, !psr.id !185, !Tainted !98
+  store i8 %43, i8* %45, align 1, !dbg !196, !psr.id !197, !Tainted !98
+  store i8 48, i8* %47, align 1, !dbg !202, !psr.id !203, !Tainted !98
+  store i8 %49, i8* %51, align 1, !dbg !212, !psr.id !213, !Tainted !98
+  store i8 6, i8* %53, align 1, !dbg !218, !psr.id !219, !Tainted !98
+  store i8 5, i8* %60, align 1, !dbg !238, !psr.id !239, !Tainted !98
+  store i8 0, i8* %62, align 1, !dbg !245, !psr.id !246, !Tainted !98
+  store i8 %65, i8* %67, align 1, !dbg !261, !psr.id !262, !Tainted !98
+  call void @llvm.memset.p0i8.i64(i8* align 4 %4, i8 0, i64 %8, i1 false), !dbg !84, !psr.id !95, !CalledTainted !96
+  call void @llvm.memset.p0i8.i64(i8* align 1 %0, i8 0, i64 %1, i1 false), !dbg !100, !psr.id !102, !CalledTainted !103
+  call void @llvm.memset.p0i8.i64(i8* align 4 %4, i8 0, i64 %8, i1 false), !dbg !87, !psr.id !97, !CalledTainted !98
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %36, i8* align 4 %37, i64 %13, i1 false), !dbg !178, !psr.id !182, !CalledTainted !183
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %40, i8* align 4 %41, i64 %13, i1 false), !dbg !189, !psr.id !192, !CalledTainted !183
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %92, i8* align 4 %93, i64 %13, i1 false), !dbg !369, !psr.id !372, !CalledTainted !373
+  call void @llvm.memset.p0i8.i64(i8* align 4 %4, i8 0, i64 %8, i1 false), !dbg !87, !psr.id !97, !CalledTainted !98
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %21, i8* align 4 %23, i64 %24, i1 false), !dbg !130, !psr.id !137, !CalledTainted !138
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %35, i8* align 4 %39, i64 %41, i1 false), !dbg !173, !psr.id !186, !CalledTainted !187
+  call void @llvm.memset.p0i8.i64(i8* align 4 %4, i8 0, i64 %8, i1 false), !dbg !84, !psr.id !95, !CalledTainted !96
+  call void @llvm.memset.p0i8.i64(i8* align 1 %18, i8 -1, i64 %19, i1 false), !dbg !128, !psr.id !129, !CalledTainted !130
+  call void @llvm.memset.p0i8.i64(i8* align 1 %36, i8 -1, i64 %37, i1 false), !dbg !177, !psr.id !178, !CalledTainted !130
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %55, i8* align 1 %0, i64 %56, i1 false), !dbg !229, !psr.id !230, !CalledTainted !231
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %69, i8* align 1 %1, i64 %2, i1 false), !dbg !273, !psr.id !274, !CalledTainted !231
+all taint position!
+121

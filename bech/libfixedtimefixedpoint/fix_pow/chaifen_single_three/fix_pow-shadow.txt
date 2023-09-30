@@ -1,0 +1,24 @@
+fix_pow-shadow.bpl(5728,3): Error: This assertion might not hold.
+Execution trace:
+    fix_pow-shadow.bpl(2364,1): $bb0
+    fix_pow-shadow.bpl(52830,1): inline$__SMACK_static_init$0$$bb0
+    fix_pow-shadow.bpl(52814,1): inline$__SMACK_init_func_memory_model$0$$bb0
+    fix_pow-shadow.bpl(2364,1): $bb0$1
+    fix_pow-shadow.bpl(3418,1): inline$fix_pow$0$$bb0
+    fix_pow-shadow.bpl(5644,1): inline$fixfrac$0$$bb0
+    fix_pow-shadow.bpl(52775,23): inline$$alloc$0$Entry
+    fix_pow-shadow.bpl(52797,3): inline$$$alloc$0$anon0
+    fix_pow-shadow.bpl(52799,7): inline$$$alloc$0$anon2_Then
+    fix_pow-shadow.bpl(5644,1): inline$fixfrac$0$$bb0$1
+    fix_pow-shadow.bpl(52775,23): inline$$alloc$1$Entry
+    fix_pow-shadow.bpl(52797,3): inline$$$alloc$1$anon0
+    fix_pow-shadow.bpl(52799,7): inline$$$alloc$1$anon2_Then
+    fix_pow-shadow.bpl(5644,1): inline$fixfrac$0$$bb0$2
+    fix_pow-shadow.bpl(53044,3): inline$$memcpy.i8$0$anon0
+    fix_pow-shadow.bpl(5644,1): inline$fixfrac$0$$bb0$3
+    fix_pow-shadow.bpl(53044,3): inline$$memcpy.i8$1$anon0
+    fix_pow-shadow.bpl(5644,1): inline$fixfrac$0$$bb0$4
+    fix_pow-shadow.bpl(5682,1): inline$fixfrac$0$$bb1
+    fix_pow-shadow.bpl(5702,1): inline$fixfrac$0$$bb2
+
+Boogie program verifier finished with 0 verified, 1 error

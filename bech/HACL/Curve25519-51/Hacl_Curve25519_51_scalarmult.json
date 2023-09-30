@@ -1,0 +1,16 @@
+
+{
+    "name": "taint-config-test",
+    "version": 1.0,
+    "functions": [
+        {
+            "file": "aes_ct.c",
+            "name": "Hacl_Curve25519_51_scalarmult",
+            "params": {
+                "source": [
+                    1
+                ]
+            }
+        }
+    ]
+}

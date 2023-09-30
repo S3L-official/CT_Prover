@@ -1,0 +1,20 @@
+PhASAR v0222
+A LLVM-based static analysis framework
+
+  br i1 %5, label %6, label %7, !dbg !308, !psr.id !309, !Tainted !310
+  br i1 %10, label %11, label %38, !dbg !319, !psr.id !320, !Tainted !310
+  br i1 %14, label %15, label %16, !dbg !331, !psr.id !332, !Tainted !310
+  br i1 %19, label %20, label %35, !dbg !341, !psr.id !342, !Tainted !310
+  br i1 %5, label %6, label %7, !dbg !302, !psr.id !303, !Tainted !304
+  br i1 %9, label %10, label %22, !dbg !317, !psr.id !318, !Tainted !319
+  %12 = load i64, i64* %11, align 8, !dbg !320, !psr.id !322, !Tainted !319
+  %15 = load i64, i64* %14, align 8, !dbg !325, !psr.id !327, !Tainted !319
+  store i64 %18, i64* %19, align 8, !dbg !336, !psr.id !337, !Tainted !319
+  br i1 %35, label %36, label %45, !dbg !376, !psr.id !377, !Tainted !378
+  %41 = load i64, i64* %40, align 8, !dbg !386, !psr.id !387, !Tainted !378
+  store i64 %42, i64* %40, align 8, !dbg !386, !psr.id !389, !Tainted !378
+  br i1 %5, label %6, label %8, !dbg !301, !psr.id !302, !Tainted !303
+  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 8 %21, i8* align 8 %24, i64 %27, i1 false), !dbg !343, !psr.id !355, !CalledTainted !356
+all taint position!
+14
+----- Finish the Analysis -----

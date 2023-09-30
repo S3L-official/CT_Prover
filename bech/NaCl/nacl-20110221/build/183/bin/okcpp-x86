@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'g++ -m32 -O3 -fomit-frame-pointer -funroll-loops'
+echo 'g++ -m32 -O -fomit-frame-pointer'
+echo 'g++ -m32 -fomit-frame-pointer'
