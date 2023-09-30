@@ -55,7 +55,7 @@ This repository provides the tool for the paper "Towards Efficient Verification 
     ```
     vfct
     ```
-    to carry out the analysis. The analysis will automatically generated into the file  with .txt and .csv suffix
+    to carry out the analysis. The analysis results will automatically generated into the file  with .txt and .csv suffix
 - 2 Verifying Non-constant-time Implementations
   - Same with the above except run the command
 
