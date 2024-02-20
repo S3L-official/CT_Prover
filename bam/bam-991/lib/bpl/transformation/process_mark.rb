@@ -184,42 +184,31 @@ module Bpl
 
 
 
-            when AssignStatement
-              if markedflg == 1
-                #检查
-                if stmt.lhs[0].name != "$shadow_ok"
-                  raise "ERROR!!!"
-                end
-
-                rhs = stmt.rhs[0].rhs.lhs
-
-
-
-                isVariable = 0
-                varname = ""
-                # stmt.each do |node|
-                #   next unless node.is_a? StorageIdentifier
-                #   if node.name =~ /\.shadow/
-                #     unless node.is_variable?
-                #       break
-                #     end
-                #     isVariable = 1
-                #     varname = node.name.chomp('.shadow')
-                #     break
-                #   end
-                # end
-                if rhs.is_a? StorageIdentifier and rhs.is_variable?
-                  isVariable = 1
-                  varname = rhs.name.chomp('.shadow')
-                end
-
-                if isVariable == 1
-                  newstmt = bpl("#{varname} := #{varname}.shadow;")
-                  stmt.replace_with(newstmt)
-                end
-
-                markedflg = 0
-              end
+            # when AssignStatement
+            #   if markedflg == 1
+            #     #检查
+            #     if stmt.lhs[0].name != "$shadow_ok"
+            #       raise "ERROR!!!"
+            #     end
+            #
+            #     rhs = stmt.rhs[0].rhs.lhs
+            #
+            #
+            #
+            #     isVariable = 0
+            #     varname = ""
+            #     if rhs.is_a? StorageIdentifier and rhs.is_variable?
+            #       isVariable = 1
+            #       varname = rhs.name.chomp('.shadow')
+            #     end
+            #
+            #     if isVariable == 1
+            #       newstmt = bpl("#{varname} := #{varname}.shadow;")
+            #       stmt.replace_with(newstmt)
+            #     end
+            #
+            #     markedflg = 0
+            #   end
 
               # # ensure the indicies to loads and stores are equal
               # accesses(stmt).each do |idx|
@@ -231,13 +220,23 @@ module Bpl
               # stmt.insert_after(shadow_copy(stmt))
 
             when AssertStatement
-              if markedflg == 1
+              if markedflg != 1
                 if stmt.expression.respond_to?(:lhs)
-                  var = stmt.expression.lhs
-                  if var.is_variable?
-                    varname = var.name
-                    newstmt = bpl("#{varname} := #{varname}.shadow;")
-                    stmt.replace_with(newstmt)
+                  if stmt.expression.lhs.name == "$nondet"
+                    var = stmt.expression.rhs.lhs
+                    if var.is_a?(Identifier) && var.is_variable?
+                      varname = var.name
+                      newstmt = bpl("#{varname} := #{varname}.shadow;")
+                      stmt.replace_with(newstmt)
+                    end
+
+                  else
+                    var = stmt.expression.lhs
+                    if var.is_a?(Identifier) && var.is_variable?
+                      varname = var.name
+                      newstmt = bpl("#{varname} := #{varname}.shadow;")
+                      stmt.replace_with(newstmt)
+                    end
                   end
                 # elsif stmt.expression.name == "$shadow_ok"
                 #   puts stmt
@@ -246,10 +245,13 @@ module Bpl
                   # next if decl.has_attribute? :entrypoint
                   # newstmt = bpl("$shadow_ok := true;")
                   # stmt.replace_with(newstmt)
+
                 end
                 # puts stmt.lhs
-                markedflg = 0
+
               end
+
+              markedflg = 0
 
 
             # when CallStatement

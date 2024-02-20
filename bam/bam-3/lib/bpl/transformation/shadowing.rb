@@ -260,7 +260,7 @@ module Bpl
       #   # puts node
       # end
 
-      def dependent_variables(proc, expr)
+      def dependent_variables(proc, expr, isVariable)
         work_list = [expr]
         deps = Set.new
         covered = Set.new(work_list)
@@ -272,6 +272,10 @@ module Bpl
             defs = proc.body.definitions[id.name]
             next unless defs
             deps.add(id.name)
+            # 保存id isvaraible信息
+            if id.is_variable?
+              isVariable.add(id.name)
+            end            
             defs.each do |s|
               next if covered.include?(s)
               covered.add(s)
@@ -374,7 +378,12 @@ module Bpl
       def shadow_assert(expr)
         # puts bpl_expr(expr)
         # bpl("$shadow_ok := $shadow_ok && (#{expr});")
-        bpl("assert #{expr};")
+        bpl("assert $nondet ==> #{expr};")
+      end
+
+      def add_shadow_assert(stmt, idx)
+        stmt.insert_before(bpl("havoc $nondet;"))
+        stmt.insert_before(shadow_assert(shadow_eq(idx)))
       end
 
       def run! program
@@ -391,6 +400,7 @@ module Bpl
         program.global_variables.last.insert_after(bpl("var $shadow_ok: bool;"))
         program.declarations.last.insert_after(bpl("const {:count 1} cons.dup: i1;"))
         program.declarations.last.insert_after(bpl("axiom (cons.dup == 0);"))
+        program.global_variables.last.insert_after(bpl("var $nondet: bool;"))
 
         # duplicate parameters, returns, and local variables
         program.each_child do |decl|
@@ -438,7 +448,7 @@ module Bpl
               # ensure the indicies to loads and stores are equal
               # collectinfo(stmt, ls)
               accesses(stmt).each do |idx|
-                stmt.insert_before(shadow_assert(shadow_eq(idx)))
+                add_shadow_assert(stmt, idx)
                 equalities.add(idx)
               end
 
@@ -459,7 +469,7 @@ module Bpl
                 stmt.arguments.each do |x|
                   unless x.type.is_a?(MapType)
                     if x.any?{|id| id.is_a?(StorageIdentifier)}
-                      stmt.insert_before(shadow_assert(shadow_eq(x)))
+                      add_shadow_assert(stmt, x)
                       equalities.add(x)
                     end
                   end
@@ -519,7 +529,7 @@ module Bpl
                   # if $pos2
                   #   next unless taintset === expr
                   # end
-                  stmt.insert_before(shadow_assert(shadow_eq(expr)))
+                  add_shadow_assert(stmt, expr)
                   equalities.add(expr)
                 end
               end
@@ -572,9 +582,11 @@ module Bpl
               each{|r| r.insert_before(bpl("assert $shadow_ok;"))}
           end
 
+          isVariable = Set.new
+
           equality_dependencies =
             equalities.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)}
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)}
 
           pointer_argument_dependencies =
             arguments.select{|x|
@@ -582,7 +594,7 @@ module Bpl
                 x.declaration &&
                 x.declaration.type.is_a?(CustomType) &&
                 x.declaration.type.name == "ref"}.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
               equality_dependencies
 
           value_argument_dependencies =
@@ -591,17 +603,43 @@ module Bpl
                 x.declaration &&
                 x.declaration.type.is_a?(CustomType) &&
                 x.declaration.type.name != "ref"}.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
               equality_dependencies -
               pointer_argument_dependencies
 
           decl.body.loops.each do |head,body|
 
-            # a = 1
-            # puts head
-            # puts"__________________"
-            # puts body
-            # puts"__________________"
+            #互不阻挡shadow inv无法实现
+            # value_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                        bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
+            # pointer_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
+            # equality_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
 
 
 
@@ -610,7 +648,7 @@ module Bpl
               # head.prepend_children(:statements,
               #                       bpl("assert {:unlikely_shadow_invariant #{expr} == #{shadow expr}} true;"))
               head.prepend_children(:statements,
-                                    bpl("assert {:unlikely_shadow_invariant #{dup(expr)} == 0} true;"))
+                                    bpl("assert {:unlikely_shadow_invariant  #{dup(expr)} == 0} true;"))
             end
             pointer_argument_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
@@ -624,10 +662,10 @@ module Bpl
               # head.prepend_children(:statements,
               #                       bpl("assert {:shadow_invariant} #{expr} == #{shadow expr};"))
               head.prepend_children(:statements,
-                                    bpl("assert {:shadow_invariant} #{dup(expr)} == 0;"))
+                                    bpl("assert {:shadow_invariant}   #{dup(expr)} == 0;"))
             end
-            head.prepend_children(:statements,
-                                  bpl("assert {:shadow_invariant} $shadow_ok;"))
+            # head.prepend_children(:statements,
+            #                       bpl("assert {:shadow_invariant} $shadow_ok;"))
           end
         end
 

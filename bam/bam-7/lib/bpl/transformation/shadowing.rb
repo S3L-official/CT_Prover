@@ -205,8 +205,13 @@ module Bpl
           # expr.replace_with(StorageIdentifier.new(name: shadow(expr)))
           if expr.declaration && expr.declaration.is_a?(ConstantDeclaration)
             expr.name = "cons.dup"
-          else
+            # 处理magic中的assume时，只需要dup M[]
+          elsif expr.type.is_a?(MapType)
             expr.name = dup(expr)
+          else
+          # else
+          #   expr.name = dup(expr)
+
           end
         end
       end
@@ -223,11 +228,15 @@ module Bpl
         end
       end
 
+      def isliteral(stmt)
+        if stmt.lhs[0].name == "$exn"
+          return true
+        end
+        return false
+      end
+
       def isstore(stmt)
         stmt.each do |expr|
-          if expr.is_a?(Literal)
-            return true
-          end
           next unless expr.is_a?(FunctionApplication)
           next unless expr.function.is_a?(Identifier)
           next unless expr.function.name =~ /\$(store)/
@@ -273,7 +282,7 @@ module Bpl
       #   # puts node
       # end
 
-      def dependent_variables(proc, expr)
+      def dependent_variables(proc, expr, isVariable)
         work_list = [expr]
         deps = Set.new
         covered = Set.new(work_list)
@@ -285,6 +294,10 @@ module Bpl
             defs = proc.body.definitions[id.name]
             next unless defs
             deps.add(id.name)
+            # 保存id isvaraible信息
+            if id.is_variable?
+              isVariable.add(id.name)
+            end
             defs.each do |s|
               next if covered.include?(s)
               covered.add(s)
@@ -379,8 +392,13 @@ module Bpl
 
       def shadow_assert(expr)
         # puts bpl_expr(expr)
-        bpl("assert #{expr};")
+        bpl("assert $nondet ==> #{expr};")
         # bpl("$shadow_ok := $shadow_ok && (#{expr});")
+      end
+      
+      def add_shadow_assert(stmt, idx)
+        stmt.insert_before(bpl("havoc $nondet;"))
+        stmt.insert_before(shadow_assert(shadow_eq(idx)))
       end
 
       #luwei assert: 
@@ -389,12 +407,17 @@ module Bpl
         bpl("#{dup_copy(x)} := 0;")
       end
 
+                  # #将不可变变量用require添加到函数中。
+                  def add_to_assert(decl, var)
+                    decl.append_children(:specifications,
+                                         bpl("requires (#{dup_copy(var)} == 0);")
+                    )
+                  end
+
             #将不可变变量用require添加到函数中。
-            def add_to_assert(decl, var)
-              decl.append_children(:specifications,
-                                   bpl("requires (#{dup_copy(var)} == 0);")
-              )
-            end
+            # def add_to_assert(decl, var)
+              
+            # end
 
       def run! program
         program.global_variables.each do |v|
@@ -407,6 +430,7 @@ module Bpl
         program.global_variables.last.insert_after(bpl("var $shadow_ok: bool;"))
         program.declarations.last.insert_after(bpl("const {:count 1} cons.dup: i1;"))
         program.declarations.last.insert_after(bpl("axiom (cons.dup == 0);"))
+        program.global_variables.last.insert_after(bpl("var $nondet: bool;"))
 
         #测试用的污点条件集合，在正式版里面应该删除
         taintconds = Set.new
@@ -435,10 +459,9 @@ module Bpl
           arguments = Set.new
 
           taintflg = 0
+          valuetaint = 0
           calledtaintflg = 0
           calledtaintls = ""
-          valuetaint = 0
-
           decl.body.each do |stmt|
             if stmt.is_a?(Statement)
               cloc = cloc + 1
@@ -516,6 +539,11 @@ module Bpl
                 valuetaint = 1
                 stmt.remove
               end
+
+              if k.key.to_s == "PointTainted"
+                stmt.remove
+              end
+
             end
 
             when AssignStatement
@@ -527,7 +555,7 @@ module Bpl
                 all = all + 1
                 if taintflg == 1
                   td = td + 1
-                  stmt.insert_before(shadow_assert(shadow_eq(idx)))
+                  add_shadow_assert(stmt, idx)
                   equalities.add(idx)
                   taintflg = 0
                 else
@@ -541,16 +569,13 @@ module Bpl
                 end
               end
 
-              #之后再改回来
-              # if $FLG == "yes" || $FLG == "Yes"
-              #   processUnTaintedStmt stmt, taintset
-              # end
-              # shadow the assignment
-              
-              #增加新的rhs信息
-             
+              if stmt.lhs[0].name == "$p1"
+                kk = 0
+              end
 
-              if valuetaint == 0 && isstore(stmt) == false
+
+              # if valuetaint == 0 && isstore(stmt) == false && isliteral(stmt)
+              if valuetaint == 0 && isstore(stmt) == false && isliteral(stmt) == false
                 x = stmt.lhs
                 stmt.insert_after(bpl("#{dup(x[0])} := 0;"))
               else
@@ -566,69 +591,13 @@ module Bpl
             when CallStatement
               #调用了magic，（访存等函数），就要保证参数是不会有所泄露的。
               if magic?(stmt.procedure.name)
-
-                if calledtaintflg == 1
-                  calledtaintflg = 0
-                  pname = stmt.procedure.name
-                  stmt.arguments.each_with_index do |x,indx|
-                    unless x.type.is_a?(MapType)
-                      if x.any?{|id| id.is_a?(StorageIdentifier)}
-                        # stmt.insert_before(shadow_assert(shadow_eq(x)))
-                        # equalities.add(x)
-                        all = all + 1
-                        td = td + 1
-                        ## 需要对不同的magic函数做相应的处理
-                        # 有点麻烦，不得不做。
-                        if pname == "$alloc" || pname == "$free"
-                          stmt.insert_before(shadow_assert(shadow_eq(x)))
-                          equalities.add(x)
-                        end
-
-                        if pname == "$memcpy.i8"
-                          if calledtaintls[indx-2] == "1"
-                            stmt.insert_before(shadow_assert(shadow_eq(x)))
-                            equalities.add(x)
-                          elsif x.is_a? StorageIdentifier and x.is_variable?
-                            stmt.insert_before(luwei_eq(x))
-                          else
-                            add_to_assert(decl, x)
-                            # stmt.insert_before(shadow_assert(shadow_eq(x)))
-                            # equalities.add(x)
-                          end
-                        end
-
-                        if pname == "$memset.i8"
-                          if calledtaintls[indx-1] == "1"
-                            stmt.insert_before(shadow_assert(shadow_eq(x)))
-                            equalities.add(x)
-                          elsif x.is_a? StorageIdentifier and x.is_variable?
-                            stmt.insert_before(luwei_eq(x))
-                          else
-                            add_to_assert(decl, x)
-                            # stmt.insert_before(shadow_assert(shadow_eq(x)))
-                            # equalities.add(x)
-                          end
-                        end
-
-                        if pname == "$memcmp.i8"
-                          raise "Need to process memcmp!"
-                        end
-
-                      end
-                    end
-                  end
-                else
-                  stmt.arguments.each_with_index do |x,indx|
-                    unless x.type.is_a?(MapType)
-                      if x.any?{|id| id.is_a?(StorageIdentifier)}
-                        if x.is_a? StorageIdentifier and x.is_variable?
-                          stmt.insert_before(luwei_eq(x))
-                        else
-                          add_to_assert(decl, x)
-                        #   stmt.insert_before(shadow_assert(shadow_eq(x)))
-                        #   equalities.add(x)
-                        end
-                      end
+                stmt.arguments.each do |x|
+                  unless x.type.is_a?(MapType)
+                    if x.any?{|id| id.is_a?(StorageIdentifier)}
+                      all = all + 1
+                      td = td + 1
+                      add_shadow_assert(stmt, x)
+                      equalities.add(x)
                     end
                   end
                 end
@@ -681,7 +650,7 @@ module Bpl
                   all = all + 1
                   if taintflg == 1
                     td = td + 1
-                    stmt.insert_before(shadow_assert(shadow_eq(expr)))
+                    add_shadow_assert(stmt, expr)
                     equalities.add(expr)
                     taintflg = 0                  
                   else 
@@ -707,7 +676,7 @@ module Bpl
             end
           end
 
-
+          
           decl.body.each do |ret|
             next unless ret.is_a?(ReturnStatement)
 
@@ -733,9 +702,11 @@ module Bpl
               each{|r| r.insert_before(bpl("assert $shadow_ok;"))}
           end
 
+          isVariable = Set.new
+
           equality_dependencies =
             equalities.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)}
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)}
 
           pointer_argument_dependencies =
             arguments.select{|x|
@@ -743,7 +714,7 @@ module Bpl
                 x.declaration &&
                 x.declaration.type.is_a?(CustomType) &&
                 x.declaration.type.name == "ref"}.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
               equality_dependencies
 
           value_argument_dependencies =
@@ -752,37 +723,88 @@ module Bpl
                 x.declaration &&
                 x.declaration.type.is_a?(CustomType) &&
                 x.declaration.type.name != "ref"}.
-              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+              reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
               equality_dependencies -
               pointer_argument_dependencies
 
           decl.body.loops.each do |head,body|
+            # puts(head.name)
+            pds = head.instance_variable_get(:@predecessors)
+            auxlilarypos = []
+            pds.each do |item|
+              auxlilarypos.push(item.statements[-1])
+            end
+
+            # value_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                        bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
+            # pointer_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
+            # equality_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{dup(expr)} := 0;"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{dup(expr)} == 0;"))
+            #   end
+            # end
+
+
             value_argument_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
               # head.prepend_children(:statements,
               #                       bpl("assert {:unlikely_shadow_invariant #{expr} == #{shadow expr}} true;"))
-              all = all + 1
               head.prepend_children(:statements,
-                                    bpl("assert {:unlikely_shadow_invariant #{dup(expr)} == 0} true;"))
+                                    bpl("assert {:unlikely_shadow_invariant  #{dup(expr)} == 0} true;"))
+
             end
             pointer_argument_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
-              all = all + 1
               # head.prepend_children(:statements,
               #                       bpl("assert {:likely_shadow_invariant} #{expr} == #{shadow expr};"))
               head.prepend_children(:statements,
-                                    bpl("assert {:likely_shadow_invariant} #{dup(expr)} == 0;"))
+                                    bpl("assert {:likely_shadow_invariant}  #{dup(expr)} == 0;"))
+              auxlilarypos.each do |pos|
+                all = all + 1
+                td = td + 1
+                pos.insert_before(bpl("havoc $nondet;"))
+                pos.insert_before(bpl("assert $nondet ==>(#{dup(expr)} == 0);"))
+              end
+
             end
             equality_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
-              all = all + 1
               # head.prepend_children(:statements,
               #                       bpl("assert {:shadow_invariant} #{expr} == #{shadow expr};"))
               head.prepend_children(:statements,
-                                    bpl("assert {:shadow_invariant} #{dup(expr)} == 0;"))
+                                    bpl("assert {:shadow_invariant}   #{dup(expr)} == 0;"))
+              auxlilarypos.each do |pos|
+                all = all + 1
+                td = td + 1
+                pos.insert_before(bpl("havoc $nondet;"))
+                pos.insert_before(bpl("assert $nondet ==> (#{dup(expr)} == 0);"))
+              end
+
             end
-            head.prepend_children(:statements,
-                                  bpl("assert {:shadow_invariant} $shadow_ok;"))
+            # head.prepend_children(:statements,
+            #                       bpl("assert {:shadow_invariant} $shadow_ok;"))
           end
         end
         puts "all shadow: ",all

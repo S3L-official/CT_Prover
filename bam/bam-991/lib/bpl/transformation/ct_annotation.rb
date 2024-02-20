@@ -42,7 +42,6 @@ module Bpl
                 bpl("requires {:#{stmt.procedure.name} #{access * ", "}} true;")
               )
             end
-
           end
 
         end

@@ -41,7 +41,17 @@ module Bpl
         end
       end
 
-      def dependent_variables(proc, expr)
+      def isstore(stmt)
+        stmt.each do |expr|
+          next unless expr.is_a?(FunctionApplication)
+          next unless expr.function.is_a?(Identifier)
+          next unless expr.function.name =~ /\$(store)/
+          return true
+        end
+        return false
+      end
+
+      def dependent_variables(proc, expr, isVariable)
         work_list = [expr]
         deps = Set.new
         covered = Set.new(work_list)
@@ -53,6 +63,10 @@ module Bpl
             defs = proc.body.definitions[id.name]
             next unless defs
             deps.add(id.name)
+            # 保存id isvaraible信息
+            if id.is_variable?
+              isVariable.add(id.name)
+            end            
             defs.each do |s|
               next if covered.include?(s)
               covered.add(s)
@@ -143,22 +157,33 @@ module Bpl
       end
 
       def shadow_assert(expr)
-        bpl("assert #{expr};")
+        bpl("assert $nondet ==> #{expr};")
         # bpl("$shadow_ok := $shadow_ok && #{expr};")
+      end
+
+      def add_shadow_assert(stmt, idx)
+        stmt.insert_before(bpl("havoc $nondet;"))
+        stmt.insert_before(shadow_assert(shadow_eq(idx)))
       end
 
       #luwei assert: 
       #使用assign，或者assert
       def luwei_eq(x)
-        bpl("#{x} := #{shadow_copy(x)};")
+        bpl("#{shadow_copy(x)} := #{x};")
       end
+
+      # #将不可变变量用require添加到函数中。
+      # def add_to_assert(decl, var)
+      #   decl.append_children(:specifications,
+      #                        bpl("requires (#{var} == #{shadow_copy(var)});")
+      #   )
+      # end
 
       #将不可变变量用require添加到函数中。
       def add_to_assert(decl, var)
-        decl.append_children(:specifications,
-                             bpl("requires (#{var} == #{shadow_copy(var)});")
-        )
+
       end
+
 
       def run! program
         # count the line of program
@@ -170,6 +195,7 @@ module Bpl
         # duplicate global variables
         program.global_variables.each {|v| v.insert_after(decl(v))}
         program.global_variables.last.insert_after(bpl("var $shadow_ok: bool;"))
+        program.global_variables.last.insert_after(bpl("var $nondet: bool;"))
 
 
         #测试用的污点条件集合，在正式版里面应该删除
@@ -193,6 +219,7 @@ module Bpl
           arguments = Set.new
 
           taintflg = 0
+          valuetaint = 0
           calledtaintflg = 0
           calledtaintls = ""
           decl.body.each do |stmt|
@@ -220,57 +247,19 @@ module Bpl
               unless k.nil?
                 if k.key.to_s == "Tainted"
                   taintflg = 1
-
-                  #检查语句
-
-                  # nxt = stmt.next_sibling
-                  # alarm = 1
-                  # if nxt.is_a?(AssumeStatement)
-                  #   if nxt.has_attribute?(:branchcond)
-                  #     alarm = 0
-                  #     tiantedcond = nxt.get_attribute(:branchcond)
-                  #     taintconds.add(tiantedcond[0].declaration)
-                  #   else
-                  #     taintedcond = nxt.expression.expression.lhs.declaration
-                  #     if taintconds === taintedcond
-                  #       alarm = 0
-                  #     end
-                  #   end
-                  # elsif nxt.is_a?(AssignStatement)
-                  #   accesses(nxt).each do |idx|
-                  #     alarm = 0
-                  #   end
-                  # end
-                  #
-                  #
-                  # if alarm == 1
-                  #   puts stmt
-                  #   puts nxt
-                  #   puts decl
-                  #   raise "Tainted with wrong following statement!"
-                  # end
-                  #end 检查语句
                   stmt.remove
                 end
 
                 if k.key.to_s == "CalledTainted"
-                  calledtaintflg = 1
-                  calledtaintls = k.values[0]
-                  #检查语句
-                  # nxt = stmt.next_sibling
-                  # while nxt.is_a?(AssumeStatement) && nxt.expression.to_s == "true"
-                  #   nxt = nxt.next_sibling
-                  # end
-                  # alarm = 1
-                  # if nxt.is_a?(CallStatement)
-                  #   alarm = 0
-                  # end
-                  # puts stmt
-                  # puts nxt
-                  # if alarm == 1
-                  #   raise "Called Tainted with wrong following statement!"
-                  # end
-                  # end检查语句
+                  stmt.remove
+                end
+
+                if k.key.to_s == "ValueTainted"
+                  valuetaint = 1
+                  stmt.remove
+                end
+
+                if k.key.to_s == "PointTainted"
                   stmt.remove
                 end
 
@@ -286,7 +275,8 @@ module Bpl
                 all = all + 1
                 if taintflg == 1
                   td = td + 1
-                  stmt.insert_before(shadow_assert(shadow_eq(idx)))
+                  puts stmt
+                  add_shadow_assert(stmt, idx)
                   equalities.add(idx)
                   taintflg = 0
                 
@@ -301,15 +291,29 @@ module Bpl
                 end
               end
 
-              # shadow the assignment
-              stmt.insert_after(shadow_copy(stmt))
+              if stmt.lhs[0].name == "$p1"
+                kk = 0
+              end
+
+              #增加新的rhs信息
+              if valuetaint == 0 && isstore(stmt) == false
+                x = stmt.lhs
+                stmt.insert_after(bpl("#{shadow(x[0])} := #{x[0]};"))
+              else
+                valuetaint = 0
+                # shadow the assignment
+                stmt.insert_after(shadow_copy(stmt))
+              end
 
             when CallStatement
               if magic?(stmt.procedure.name)
                 stmt.arguments.each do |x|
                   unless x.type.is_a?(MapType)
                     if x.any?{|id| id.is_a?(StorageIdentifier)}
-                      stmt.insert_before(shadow_assert(shadow_eq(x)))
+                      all = all + 1
+                      td = td + 1
+                      puts stmt
+                      add_shadow_assert(stmt, x)
                       equalities.add(x)
                     end
                   end
@@ -422,7 +426,8 @@ module Bpl
                   all = all + 1
                   if taintflg == 1
                     td = td + 1
-                    stmt.insert_before(shadow_assert(shadow_eq(expr)))
+                    puts stmt
+                    add_shadow_assert(stmt, expr)
                     equalities.add(expr)
                     taintflg = 0
                   else 
@@ -472,9 +477,11 @@ module Bpl
               each{|r| r.insert_before(bpl("assert $shadow_ok;"))}
           end
 
+          isVariable = Set.new
+
           equality_dependencies =
             equalities.
-            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)}
+            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)}
 
           pointer_argument_dependencies =
             arguments.select{|x|
@@ -482,7 +489,7 @@ module Bpl
               x.declaration &&
               x.declaration.type.is_a?(CustomType) &&
               x.declaration.type.name == "ref"}.
-            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
             equality_dependencies
 
           value_argument_dependencies =
@@ -491,11 +498,47 @@ module Bpl
               x.declaration &&
               x.declaration.type.is_a?(CustomType) &&
               x.declaration.type.name != "ref"}.
-            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr)} -
+            reduce(Set.new){|acc, expr| acc | dependent_variables(decl, expr,isVariable)} -
             equality_dependencies -
             pointer_argument_dependencies
 
           decl.body.loops.each do |head,body|
+            pds = head.instance_variable_get(:@predecessors)
+            auxlilarypos = []
+            pds.each do |item|
+              auxlilarypos.push(item.statements[-1])
+            end
+            # value_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                        bpl("#{expr} := #{shadow expr};"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{expr} == #{shadow expr};"))
+            #   end
+            # end
+            # pointer_argument_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{expr} := #{shadow expr};"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{expr} == #{shadow expr};"))
+            #   end
+            # end
+            # equality_dependencies.each do |expr|
+            #   next unless decl.body.live[head].include?(expr)
+            #   if isVariable.include? expr
+            #     head.prepend_children(:statements,
+            #                          bpl("#{expr} := #{shadow expr};"))
+            #   else
+            #     head.prepend_children(:statements,
+            #                          bpl("assume #{expr} == #{shadow expr};"))
+            #   end
+            # end
+
             value_argument_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
               head.prepend_children(:statements,
@@ -505,14 +548,31 @@ module Bpl
               next unless decl.body.live[head].include?(expr)
               head.prepend_children(:statements,
                 bpl("assert {:likely_shadow_invariant} #{expr} == #{shadow expr};"))
+
+              auxlilarypos.each do |pos|
+                all = all + 1
+                # td = td + 1
+                # puts bpl("assert $nondet ==>(#{expr} == #{shadow expr});")
+                pos.insert_before(bpl("havoc $nondet;"))
+                pos.insert_before(bpl("assert $nondet ==>(#{expr} == #{shadow expr});"))
+              end
+
             end
             equality_dependencies.each do |expr|
               next unless decl.body.live[head].include?(expr)
               head.prepend_children(:statements,
                 bpl("assert {:shadow_invariant} #{expr} == #{shadow expr};"))
+              auxlilarypos.each do |pos|
+                all = all + 1
+                # td = td + 1
+                # puts bpl("assert $nondet ==>(#{expr} == #{shadow expr});")
+                pos.insert_before(bpl("havoc $nondet;"))
+                pos.insert_before(bpl("assert $nondet ==>(#{expr} == #{shadow expr});"))
+              end
+
             end
-            head.prepend_children(:statements,
-              bpl("assert {:shadow_invariant} $shadow_ok;"))
+            # head.prepend_children(:statements,
+            #   bpl("assert {:shadow_invariant} $shadow_ok;"))
           end
         end
         puts "all shadow: ",all

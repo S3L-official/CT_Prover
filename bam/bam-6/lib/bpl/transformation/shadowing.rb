@@ -226,9 +226,6 @@ module Bpl
 
       def isstore(stmt)
         stmt.each do |expr|
-          if expr.is_a?(Literal)
-            return true
-          end
           next unless expr.is_a?(FunctionApplication)
           next unless expr.function.is_a?(Identifier)
           next unless expr.function.name =~ /\$(store)/

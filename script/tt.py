@@ -252,4 +252,8 @@ def runcommand(command, file = subprocess.PIPE, workdir = os.getcwd()):
 # process.wait()
 # print(process.communicate)
 
-runcommand("ls -l")
+# runcommand("ls -l")
+set_str = '2333,2303,2269,2239'
+print(set_str)
+my_set = set(map(int, set_str.split(',')))
+print(my_set)

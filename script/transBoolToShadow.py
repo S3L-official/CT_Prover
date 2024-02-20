@@ -1,12 +1,13 @@
 #! /usr/bin/python3
 import sys
 import re
+# arg1和arg2 两次bool分析的txt文件。arg3 是.shadow.bpl文件
 arg1 = sys.argv[1]
 arg2 = sys.argv[2]
 arg3 = sys.argv[3]
+arg4 = sys.argv[4]
 
-file_object = open(arg1, 'r')
-fbj2 = open(arg2, 'r')
+
 # try:
 #     lines = file_object.readlines()
 #     for line in lines:
@@ -14,7 +15,7 @@ fbj2 = open(arg2, 'r')
 # finally:
 #     file_object.close()
 
-
+# 将两次分析结果不成立的地方读取出来
 def processOutPut():
     poss = []
     file_object = open(arg1, 'r')
@@ -28,7 +29,7 @@ def processOutPut():
         if re.match(errs, line):
             tar = re.search(posr, line).group()
             pos = re.sub(r'\D',"",tar)
-            poss.append(int(pos)-1)
+            poss.append(int(pos))
 
     file_object = open(arg2, 'r')
     try:
@@ -41,7 +42,9 @@ def processOutPut():
         if re.match(errs, line):
             tar = re.search(posr, line).group()
             pos = re.sub(r'\D',"",tar)
-            poss.append(int(pos)-1)
+            poss.append(int(pos))
+
+    poss = set(poss)
     
     return poss
 
@@ -63,52 +66,23 @@ def doMark(poss):
 
     mark = "  assume {:VFCTMarked} true;\n"
     
-    r1 = r'.*assert \$shadow_ok;'
-    r2 = r'.*assert \{:shadow_invariant\} \$shadow_ok;'
-    r3 = r'.*assert \{:shadow_invariant\} \('
-    r4 = r'.*assert \{:likely_shadow_invariant\} \('
-    r5 = r'.*assert \{:unlikely_shadow_invariant \('
-    r6 = r'.*\$shadow_ok := \(\$shadow_ok.*'
-
-    num = 0
-    all = 0
-    for idx, line in enumerate(lines):
-        if re.match(r6, line) or re.match(r1, line) or re.match(r2, line) or re.match(r3, line) or re.match(r4, line) or re.match(r5, line):
-            # 涉及到循环不变量的东西，是污点分析排除不了的，所以不该算在内
-            if re.match(r6, line):
-                all = all + 1
-            # all = all + 1
-            # if re.match(r1, line) or re.match(r2, line):
-            #     all = all - 1
-            if idx not in poss:
-                ls.append(mark)
-            else:
-                # print("!!!!!!")
-                # print(line)
-                num = num + 1
-        ls.append(line)
+    with open(arg4, 'w') as f:
+        for idx, line in enumerate(lines):
+            if (idx+1) in poss:
+                f.write(mark)
+            f.write(line)
 
     # for idx,line in enumerate(lines):
     #     if re.match(r6, line) or re.match(rassert, line):
     #         if idx not in poss:
     #             lines.insert(idx, mark)  
 
-    with open(arg3, 'w') as f:
-        for line in ls:
-            # print(line + "\n")
-            f.write(line)
-    return num, all
 
 
 
 poss = processOutPut()
-poss = set(poss)
 print(poss)
-num, all = doMark(poss)
-print("all sensitive: ")
-print(all)
-print("left sensitive: ")
-print(num)
+doMark(poss)
 
 
 

@@ -39,7 +39,7 @@ This repository provides the tool for the paper "Towards Efficient Verification 
     cd phasar
     ./bootstrap.sh
     ```
-  - Build the smack as follows:
+  - Build the smack from source as follows:
 
     ```
     cd smack/build
@@ -49,7 +49,7 @@ This repository provides the tool for the paper "Towards Efficient Verification 
 
     Add the path of scropt into your environment.
 - 1 Verifying Constant-time Implementations
-  - In the bech directory, there are directories for various algorithm libraries. In the directory ot each libraries is the benchmarks of algorithm.
+  - In the bech directory, there are directories for various algorithm libraries. In the directory of each libraries is the benchmarks of algorithm.
   - Get into any benchmarks of algorithm. Run the command
 
     ```
@@ -60,5 +60,5 @@ This repository provides the tool for the paper "Towards Efficient Verification 
   - Same with the above except run the command
 
     ```
-    vfctnew10.py
+    vfct_find_bug.py
     ```
